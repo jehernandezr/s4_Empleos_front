@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-=======
+
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
@@ -23,18 +19,11 @@ import {CalificacionService} from './califiaciones/calificacion.service';
 import { CalificacionesModule } from './califiaciones/calificaciones.module'
 
 
->>>>>>> cd86116d988837dbdc2263854ee79ebb290fa49b
-
-import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { OfertaModule } from "./oferta/oferta.module";
 
 @NgModule({
-<<<<<<< HEAD
-  imports:      [ BrowserModule, FormsModule, OfertaModule],
-  declarations: [ AppComponent, HelloComponent ],
-  bootstrap:    [ AppComponent ]
-=======
+
     declarations: [
         AppComponent,
     ],
@@ -42,6 +31,7 @@ import { OfertaModule } from "./oferta/oferta.module";
         BrowserModule,
         CalificacionesModule,
         AppRoutingModule,
+        OfertaModule,
         HttpClientModule,
         BrowserAnimationsModule,
         ModalDialogModule.forRoot(),
@@ -64,6 +54,6 @@ import { OfertaModule } from "./oferta/oferta.module";
             multi: true
         }
     ]
->>>>>>> cd86116d988837dbdc2263854ee79ebb290fa49b
+
 })
 export class AppModule { }
