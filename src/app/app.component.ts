@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { AuthService } from './auth/auth.service';
+import {CalificacionesModule} from './califiaciones/calificaciones.module';
+
 
 /**
  * The app component. This component is the base of s4_empleos-Front

@@ -13,18 +13,20 @@ import { ModalDialogModule } from 'ngx-modal-dialog';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
+import {CalificacionService} from './califiaciones/calificacion.service';
 
-
+import { CalificacionesModule } from './califiaciones/calificaciones.module'
 
 
 
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
     ],
     imports: [
         BrowserModule,
+        CalificacionesModule,
         AppRoutingModule,
         HttpClientModule,
         BrowserAnimationsModule,
