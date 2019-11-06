@@ -45,31 +45,7 @@ const routes: Routes = [
         ]
     },
 
-     {
-        path: 'auth',
-        children: [
-            {
-                path: 'login',
-                component: AuthLoginComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['GUEST']
-                    }
-                }
-            },
-            {
-                path: ':sign-up',
-                component: AuthSignUpComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['GUEST']
-                    }
-                }
-            }
-        ]
-    },
+     
     {
         path: 'home',
         component: AuthLoginComponent
