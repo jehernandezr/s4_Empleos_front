@@ -1,3 +1,4 @@
+
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
@@ -17,9 +18,11 @@ import {CalificacionService} from './califiaciones/calificacion.service';
 import { CalificacionesModule } from './califiaciones/calificaciones.module'
 
 
-
+import { HelloComponent } from './hello.component';
+import { OfertaModule } from "./oferta/oferta.module";
 
 @NgModule({
+
     declarations: [
         AppComponent,
     ],
@@ -27,6 +30,7 @@ import { CalificacionesModule } from './califiaciones/calificaciones.module'
         BrowserModule,
         CalificacionesModule,
         AppRoutingModule,
+        OfertaModule,
         HttpClientModule,
         BrowserAnimationsModule,
         ModalDialogModule.forRoot(),
@@ -49,5 +53,6 @@ import { CalificacionesModule } from './califiaciones/calificaciones.module'
             multi: true
         }
     ]
+
 })
-export class AppModule {}
+export class AppModule { }
