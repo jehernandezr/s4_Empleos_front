@@ -31,7 +31,7 @@ describe('AppComponent', () => {
 
     it(`should have as title 's4_empleos-Front'`, async(() => {
         const app = fixture.debugElement.componentInstance;
-        expect(app.title).toEqual(component.title);
+        expect(app.title).toEqual(component.name);
     }));
 
 });
