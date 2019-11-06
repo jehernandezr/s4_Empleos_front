@@ -9,6 +9,11 @@ import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component
 import { CalificacionesListComponent } from '../califiaciones/calificaciones-list/calificaciones-list.component';
 import { CalificaionDetailComponent } from  '../califiaciones/calificaciones-detail/calificaciones-detail.component';
 
+import { OfertaListComponent } from '../oferta/oferta-list/oferta-list.component';
+import { OfertaDetailComponent } from  '../oferta/oferta-detail/oferta-detail.component';
+
+
+
 const routes: Routes = [
 
     {
@@ -20,7 +25,22 @@ const routes: Routes = [
             },
             {
                 path:':id',
-                component:CalificaionDetailComponent
+                component:CalificaionDetailComponent,
+                outlet: 'detail'
+            }
+        ]
+    },
+    {
+
+        path: 'ofertas',
+        children:[
+            {
+                path:'list',
+                component: OfertaListComponent
+            },
+            {
+                path:':id',
+                component:OfertaDetailComponent
             }
         ]
     },
