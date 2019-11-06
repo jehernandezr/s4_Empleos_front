@@ -1,15 +1,16 @@
 
-<h1>Oferta</h1>
-
-
 <ul class="nav">
 	<li class="nav-item">
-		<a class="nav-link active" 
-       routerLink="ofertas/list" 
-       routerLinkActive="active">Ofertas23</a>
-	</li>
+		<a class="nav-link active" routerLink="calificaciones/list" routerLinkActive="active">Calificaciones</a>
+        <a class="nav-link active" routerLink="ofertas/list" routerLinkActive="active">Ofertas</a>
+
+    </li>
 </ul>
-
-
-<h1>Calificaciones</h1>
-<app-calificaciones></app-calificaciones>
+<div class="container-fluid">
+		<div class="col">
+			<router-outlet></router-outlet>
+		</div>
+		<div class="col">
+			<router-outlet name="detail"></router-outlet>
+		</div>
+</div>

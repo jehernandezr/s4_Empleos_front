@@ -8,9 +8,68 @@ import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component
 import { OfertaListComponent } from '../oferta/oferta-list/oferta-list.component';
 import { OfertaDetailComponent } from '../oferta/oferta-detail/oferta-detail.component';
 
+import { CalificacionesListComponent } from '../califiaciones/calificaciones-list/calificaciones-list.component';
+import { CalificaionDetailComponent } from  '../califiaciones/calificaciones-detail/calificaciones-detail.component';
+
+
+
+
 const routes: Routes = [
 
-    
+    {
+        path: 'calificaciones',
+        children:[
+            {
+                path:'list',
+                component: CalificacionesListComponent
+            },
+            {
+                path:':id',
+                component:CalificaionDetailComponent,
+                outlet: 'detail'
+            }
+        ]
+    },
+    {
+
+        path: 'ofertas',
+        children:[
+            {
+                path:'list',
+                component: OfertaListComponent
+            },
+            {
+                path:':id',
+                component:OfertaDetailComponent
+            }
+        ]
+    },
+
+     {
+        path: 'auth',
+        children: [
+            {
+                path: 'login',
+                component: AuthLoginComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST']
+                    }
+                }
+            },
+            {
+                path: ':sign-up',
+                component: AuthSignUpComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST']
+                    }
+                }
+            }
+        ]
+    },
     {
         path: 'home',
         component: AuthLoginComponent
