@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { CalificacionesComponent } from './calificaciones-list/calificaciones-list.component';
+import { CalificacionesListComponent } from './calificaciones-list/calificaciones-list.component';
+import { CalificaionDetailComponent } from './calificaciones-detail/calificaciones-detail.component';
+
 import { CalificacionService } from './calificacion.service';
 
 @NgModule({
   imports: [
     CommonModule, HttpClientModule
   ],
-  declarations: [CalificacionesComponent],
-  exports: [CalificacionesComponent],
+  declarations: [CalificacionesListComponent,CalificaionDetailComponent],
+  exports: [CalificacionesListComponent],
   providers: [CalificacionService]
 })
 export class CalificacionesModule { }

@@ -6,7 +6,24 @@ import {NgxPermissionsGuard} from 'ngx-permissions';
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 
+import { CalificacionesListComponent } from '../califiaciones/calificaciones-list/calificaciones-list.component';
+import { CalificaionDetailComponent } from  '../califiaciones/calificaciones-detail/calificaciones-detail.component';
+
 const routes: Routes = [
+
+    {
+        path: 'calificaciones',
+        children:[
+            {
+                path:'list',
+                component: CalificacionesListComponent
+            },
+            {
+                path:':id',
+                component:CalificaionDetailComponent
+            }
+        ]
+    },
 
      {
         path: 'auth',

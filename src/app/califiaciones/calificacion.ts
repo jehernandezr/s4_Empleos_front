@@ -1,4 +1,4 @@
-export interface Calificacion {
+export class Calificacion {
 
     /**
   * The calificacion's id
