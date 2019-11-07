@@ -3,7 +3,7 @@ import {Calificacion} from '../calificacion';
 import { CalificacionService } from '../calificacion.service';
 
 @Component({
-  selector: 'app-calificaciones',
+  selector: 'list-calificaciones',
   templateUrl: './calificaciones-list.component.html',
   styleUrls: ['./calificaciones-list.component.css']
 })
@@ -21,5 +21,6 @@ export class CalificacionesListComponent implements OnInit {
   ngOnInit() {
     this.getCalificaciones();
   }
+
 
 }

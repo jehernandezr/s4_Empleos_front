@@ -1,15 +1,19 @@
 [{
-    "idOferta": 1,
-    "comentario": "Juan Esteban"
+    "id": 1,
+    "comentario": "Juan Esteban",
+    "nota":"3"
   }, {
-    "idOferta": 2,
-    "comentario": "Juan David"
+    "id": 2,
+    "comentario": "Juan David",
+    "nota":"3"
   },
   {
-    "idOferta": 3,
-    "comentario": "Esteban"
+    "id": 3,
+    "comentario": "Esteban",
+    "nota":"3"
   },
   {
-    "idOferta": 4,
-    "comentario": "El tio"
+    "id": 4,
+    "comentario": "El tio",
+    "nota":"3"
   }]

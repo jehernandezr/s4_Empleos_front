@@ -1,0 +1,53 @@
+<form [formGroup]="calificacionForm" (ngSubmit)="!calificacionForm.invalid && createCalificacion(calificacionForm.value)">
+
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="id">
+          Id
+        </label>
+            <input novalidate
+        id="id"
+        class="form-control"
+          formControlName="id"
+          placeholder="El id de la oferta a la que aplicó">
+    
+            <div class="alert alert-danger alert-dismissible fade show"
+                *ngIf="calificacionForm.get('id').hasError('required') && calificacionForm.get('id').touched">
+                Id required
+            </div>
+        </div>
+    
+        <div class="form-group  mx-sm-3 mb-2">
+            <label for="nota">
+          Nota
+        </label>
+            <input id="nota"
+         class="form-control"
+         formControlName="nota"
+         placeholder="La nota del estudiante por hacer el trabajo">
+    
+            <div class="alert alert-danger alert-dismissible fade show"
+                *ngIf="calificacionForm.get('nota').hasError('required') && calificacionForm.get('nota').touched">
+                Nota required
+            </div>
+      </div>
+
+      <div class="form-group  mx-sm-3 mb-2">
+            <label for="comentario">
+          Nota
+        </label>
+            <input id="comentario"
+         class="form-control"
+         formControlName="comentario"
+         placeholder="EL comentario del estudiante por hacer el trabajo">
+    
+            <div class="alert alert-danger alert-dismissible fade show"
+                *ngIf="calificacionForm.get('comentario').hasError('required') && calificacionForm.get('comentario').touched">
+                Nota required
+            </div>
+      </div>
+
+            <button class="button mx-sm-3 mb-2" type="submit">Create</button>
+    
+    </form>
+    
+    

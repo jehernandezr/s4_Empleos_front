@@ -18,8 +18,7 @@ const routes: Routes = [
 
     {
         path: 'calificaciones',
-        children:[
-            {
+        children:[{
                 path:'list',
                 component: CalificacionesListComponent
             },
@@ -29,23 +28,7 @@ const routes: Routes = [
                 outlet: 'detail'
             }
         ]
-    },
-    {
-
-        path: 'ofertas',
-        children:[
-            {
-                path:'list',
-                component: OfertaListComponent
-            },
-            {
-                path:':id',
-                component:OfertaDetailComponent
-            }
-        ]
-    },
-
-     
+    },  
     {
         path: 'home',
         component: AuthLoginComponent
@@ -67,6 +50,7 @@ const routes: Routes = [
         }
         ]
       }
+      
 ];
 
 @NgModule({

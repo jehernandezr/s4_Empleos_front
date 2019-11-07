@@ -18,7 +18,6 @@ import {CalificacionService} from './califiaciones/calificacion.service';
 import { CalificacionesModule } from './califiaciones/calificaciones.module'
 
 
-import { HelloComponent } from './hello.component';
 import { OfertaModule } from "./oferta/oferta.module";
 
 @NgModule({

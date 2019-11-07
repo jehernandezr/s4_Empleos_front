@@ -3,17 +3,18 @@ export class Calificacion {
     /**
   * The calificacion's id
   */
-  idOferta: number;
-
-      /**
-  * The comentario's 
-  */
-  comentario: String;
+  id: number;
 
   /**
    * The calificacion's name
   */
   nota: number; 
+
+  
+  /**
+   * The calificacion's comentary
+  */
+  comentario: string;
 
 
 }
