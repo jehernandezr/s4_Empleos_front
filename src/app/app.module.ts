@@ -24,7 +24,7 @@ import { HelloComponent } from './hello.component';
 import { OfertaModule } from "./oferta/oferta.module";
 
 import { ContratistaModule } from './contratista/contratista.module';
-
+import{CuentaDeCobroModule} from './cuenta-de-cobro/cuenta-de-cobro.module'
 @NgModule({
 
     declarations: [
@@ -35,6 +35,7 @@ import { ContratistaModule } from './contratista/contratista.module';
         BrowserModule,
         CalificacionesModule,
         TarjetadecreditoModule,
+        CuentaDeCobroModule,
         AppRoutingModule,
         OfertaModule,
         ContratistaModule,
