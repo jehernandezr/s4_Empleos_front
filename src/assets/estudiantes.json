@@ -1,34 +1,22 @@
 [
   {
-    "id":1,
-    "company": "Apple",
-    "name": "Iphone X",
-    "image":"https://falabella.scene7.com/is/image/FalabellaCO/3636217?wid=544&hei=544&qlt=70&anchor=750,750&crop=0,0,0,0",
-    "price": 5500000,
-    "stars": 4.6
+    "calificacionPromedio": 2.0,
+    "carrera": "Sistemas",
+    "horarioDeTrabajo": "a",
+    "correo": "aajkwdnakd@uniandes.edu.co",
+    "nombre": "David",
+    "semestre": 4,
+    "id": 1,
+    "idMedioDePago": 0
   },
   {
-    "id":2,
-    "company": "Samsung",
-    "name": "Galaxy S10",
-    "image":"https://falabella.scene7.com/is/image/FalabellaCO/3820955?wid=544&hei=544&qlt=70&anchor=750,750&crop=0,0,0,0",
-    "price": 4000000,
-    "stars": 4.8
-  },
-  {
-    "id":3,
-    "company": "Motorola",
-    "name": "One Zoom",
-    "image":"https://falabella.scene7.com/is/image/FalabellaCO/4130901?wid=544&hei=544&qlt=70&anchor=750,750&crop=0,0,0,0",
-    "price": 3700000,
-    "stars": 4.3
-  },
-  {
-    "id":4,
-    "company": "Huawei",
-    "name": "P30 PRO",
-    "image":"https://falabella.scene7.com/is/image/FalabellaCO/4184553?wid=544&hei=544&qlt=70&anchor=750,750&crop=0,0,0,0",
-    "price": 4200000,
-    "stars": 4.2
+    "calificacionPromedio": 2.0,
+    "carrera": "Sistemas",
+    "horarioDeTrabajo": "a",
+    "correo": "aajkwdnakd@uniandes.edu.co",
+    "nombre": "David2",
+    "semestre": 4,
+    "id": 2,
+    "idMedioDePago": 0
   }
 ]

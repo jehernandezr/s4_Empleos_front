@@ -11,8 +11,6 @@ import { EstudianteDetail } from "../estudiante.detail";
 export class EstudianteListComponent implements OnInit {
 
   estudiantes: Estudiante[];
-  avg: number;
-  mayor: number;
 
   selectedDetail: EstudianteDetail;
 
@@ -28,16 +26,7 @@ export class EstudianteListComponent implements OnInit {
     this.estudianteService.getEstudiantes().subscribe(estudiantes => 
     {
       if(estudiantes.length > 0) {
-        this.avg = 0;
-        this.mayor = 0;
         this.estudiantes = estudiantes;
-        for(var i = 0; i < estudiantes.length; i++) {
-          this.avg += estudiantes[i].price;
-          if(estudiantes[i].stars > 3.8) {
-            this.mayor += 1;
-          }
-        }
-        this.avg /= estudiantes.length;
       }
     });
   }

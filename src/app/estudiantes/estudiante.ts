@@ -1,8 +1,10 @@
 export class Estudiante {
   id: number;
-  company: string;
-  name: string;
-  image: string;
-  price: number;
-  stars: number;
+  carrera: string;
+  calificacionPromedio: number;
+  horarioDeTrabajo: string;
+  correo: string;
+  nombre: string;
+  semestre: number;
+  idMedioDepago: number;
 }
