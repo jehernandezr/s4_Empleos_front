@@ -5,13 +5,14 @@ import { OfertaDetailComponent } from './oferta-detail/oferta-detail.component';
 import { OfertaService } from './oferta.service';
 import { HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from '../app-routing/app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OfertaCreateComponent } from './oferta-create/oferta-create.component';
 
 @NgModule({
   imports: [
-    CommonModule, HttpClientModule, AppRoutingModule, FormsModule
+    CommonModule, HttpClientModule, AppRoutingModule, FormsModule,ReactiveFormsModule
   ],
-  declarations: [OfertaListComponent, OfertaDetailComponent ],
+  declarations: [OfertaListComponent, OfertaDetailComponent, OfertaCreateComponent ],
   exports: [OfertaListComponent, OfertaDetailComponent],
   providers: [OfertaService]
 
