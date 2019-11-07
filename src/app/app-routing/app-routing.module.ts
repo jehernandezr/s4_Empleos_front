@@ -10,6 +10,9 @@ import { OfertaDetailComponent } from '../oferta/oferta-detail/oferta-detail.com
 
 import { CalificacionesListComponent } from '../califiaciones/calificaciones-list/calificaciones-list.component';
 import { CalificaionDetailComponent } from  '../califiaciones/calificaciones-detail/calificaciones-detail.component';
+import { ContratistaListComponent } from '../contratista/contratista-list/contratista-list.component';
+import { ContratistaDetailComponent } from '../contratista/contratista-detail/contratista-detail.component';
+
 
 
 
@@ -41,6 +44,19 @@ const routes: Routes = [
         {
           path: ':id',
           component: OfertaDetailComponent,
+         
+        }
+        ]
+      },
+      {
+        path: 'contratistas',
+        children: [{
+          path: 'list',
+          component: ContratistaListComponent
+        },
+        {
+          path: ':id',
+          component: ContratistaDetailComponent,
          
         }
         ]

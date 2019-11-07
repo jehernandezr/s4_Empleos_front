@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 import { Oferta } from './oferta';
 import { OfertaDetail } from './oferta-detail/oferta-detail';
 
-const API_URL = "../../assets/";
-const ofertas = 'oferta.json';
+const API_URL = "http://localhost:8080/s4_empleos-api/api/";
+const ofertas = 'ofertas/';
 
 @Injectable()
 export class OfertaService {
@@ -22,8 +22,8 @@ export class OfertaService {
     }
 
     getOfertaDetail(ofertaId): Observable<OfertaDetail> {
-      console.log(ofertaId+" "+API_URL + "oferta-" + ofertaId+".json");
-        return this.http.get<OfertaDetail>(API_URL + "oferta-" + ofertaId+".json");
+      console.log(ofertaId+" "+API_URL +ofertas+ ofertaId);
+        return this.http.get<OfertaDetail>(API_URL + ofertas + ofertaId);
     }
 
 }
