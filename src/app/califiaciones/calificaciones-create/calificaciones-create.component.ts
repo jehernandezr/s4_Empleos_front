@@ -12,7 +12,7 @@ import { CalificacionService }from '../calificacion.service';
 })
 export class CalificacionCreateComponent implements OnInit {
 
-    calificacionForm: FormGroup;
+  clientForm: FormGroup;
 
     /**
     * The new calificacion
@@ -31,10 +31,9 @@ export class CalificacionCreateComponent implements OnInit {
         private formBuilder: FormBuilder,
         private toastr: ToastrService
       ) {
-        this.calificacionForm = this.formBuilder.group({
-          id: ["", [Validators.required, Validators.minLength(2)]],
-          nota: ["", Validators.required],
-          comentario: ["", Validators.required]
+        this.clientForm = this.formBuilder.group({
+          nota: [],
+          comentario: []
         });
       }
       /**
@@ -48,7 +47,7 @@ export class CalificacionCreateComponent implements OnInit {
         this.calificaciones.push(client);
         this.showSuccess();
       });
-      this.calificacionForm.reset();
+      this.clientForm.reset();
     }
 
     

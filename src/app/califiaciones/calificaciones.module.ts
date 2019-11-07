@@ -6,12 +6,12 @@ import { CalificaionDetailComponent } from './calificaciones-detail/calificacion
 import { CalificacionCreateComponent } from './calificaciones-create/calificaciones-create.component';
 
 import { CalificacionService } from './calificacion.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   imports: [
-    CommonModule, HttpClientModule,FormsModule
+    CommonModule, HttpClientModule,FormsModule,ReactiveFormsModule
   ],
   declarations: [CalificacionesListComponent,CalificaionDetailComponent,CalificacionCreateComponent],
   providers: [CalificacionService],
