@@ -19,6 +19,8 @@ import { ContratistaDetailComponent } from '../contratista/contratista-detail/co
 
 import { TarjetadecreditolistComponent } from '../tarjetadecredito/tarjetadecreditolist/tarjetadecreditolist.component';
 import { TarjetadecreditoDetailComponent } from '../tarjetadecredito/tarjetadecreditodetail/tarjetadecreditodetail.component';
+import{CuentaDeCobroListComponent} from '../cuenta-de-cobro/cuenta-de-cobro-list/cuenta-de-cobro-list.component';
+import{ CuentaDeCobroDetailComponent}from '../cuenta-de-cobro/cuenta-de-cobro-detail/cuenta-de-cobro-detail.component';
 
 const routes: Routes = [
 
@@ -37,6 +39,21 @@ const routes: Routes = [
         ]
     },
 
+    {
+      path:"cuentas",
+      children:[
+        {
+          path:"list",
+          component: CuentaDeCobroListComponent
+        },
+        {
+          path :"id",
+          component: CuentaDeCobroDetailComponent,
+          outlet: "detail"
+        }
+
+      ]
+    },
      {
         path: 'calificaciones',
         children:[
