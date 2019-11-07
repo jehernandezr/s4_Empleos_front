@@ -10,12 +10,25 @@ import { OfertaDetailComponent } from '../oferta/oferta-detail/oferta-detail.com
 
 import { CalificacionesListComponent } from '../califiaciones/calificaciones-list/calificaciones-list.component';
 import { CalificaionDetailComponent } from  '../califiaciones/calificaciones-detail/calificaciones-detail.component';
-
-
+import { EstudianteListComponent } from '../estudiantes/estudiantes-list/estudiante-list.component';
+import { EstudianteDetailComponent } from '../estudiantes/estudiantes-detail/estudiante-detail.component';
 
 
 const routes: Routes = [
-
+    {
+        path: 'estudiantes',
+        children:[
+            {
+                path:'list',
+                component: EstudianteListComponent
+            },
+            /*{
+                path:':id',
+                component: EstudianteDetailComponent,
+                outlet: 'detail'
+            }*/
+        ]
+    },
     {
         path: 'calificaciones',
         children:[
@@ -23,11 +36,11 @@ const routes: Routes = [
                 path:'list',
                 component: CalificacionesListComponent
             },
-            {
+            /*{
                 path:':id',
                 component:CalificaionDetailComponent,
                 outlet: 'detail'
-            }
+            }*/
         ]
     },
     {

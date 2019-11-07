@@ -1,0 +1,12 @@
+{
+  "id":4,
+  "company": "Huawei",
+  "name": "P30 PRO",
+  "image":"https://falabella.scene7.com/is/image/FalabellaCO/4184553?wid=544&hei=544&qlt=70&anchor=750,750&crop=0,0,0,0",
+  "price": 4200000,
+  "stars": 4.2,
+  "description":"Información adicional: Es sumergible por 30 minutos en una profundidad de, hasta, 2 metros. La memoria interna y la RAM disponibles para el usuario dependen del sistema operativo y las aplicaciones precargadas. Producto ambientado, sólo incluye productos especificados en la descripción. Máximo de 1 a 3 unidades de este producto por cliente y por transacción . El Precio de este pro.",
+  "color":"Rosa",
+  "capacity": 512,
+  "stock": 130
+}

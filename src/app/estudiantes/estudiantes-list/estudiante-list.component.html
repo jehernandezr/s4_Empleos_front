@@ -1,0 +1,18 @@
+<p><b>Costo promedio:</b> {{avg}} </p>
+<p><b>Cantidad mayor a 3.8:</b> {{mayor}} </p>
+<div class="card-group">
+<div *ngFor = "let estudiante of estudiantes" class="card" style="width: 18rem;">
+  <img src="{{estudiante.image}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{estudiante.name}}</h5>
+    <ul>
+      <li>company: {{estudiante.company}}</li>
+    </ul>
+    <a (click)="onSelected(estudiante.id)" href="javascript:;" class="btn btn-primary">Ver perfil</a>
+  </div>
+</div>
+</div>
+
+<div *ngIf="selectedDetail != undefined">
+  <app-estudiante-detail [estudianteDetail]="selectedDetail"></app-estudiante-detail>
+</div>

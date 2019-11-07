@@ -17,14 +17,19 @@ import {AuthModule} from './auth/auth.module';
 import {CalificacionService} from './califiaciones/calificacion.service';
 import { CalificacionesModule } from './califiaciones/calificaciones.module'
 
+import { EstudianteModule } from "./estudiantes/estudiante.module";
+import { EstudianteListComponent } from "./estudiantes/estudiantes-list/estudiante-list.component";
+import { EstudianteDetailComponent } from "./estudiantes/estudiantes-detail/estudiante-detail.component";
+import { EstudianteService } from "./estudiantes/estudiante.service";
 
-import { HelloComponent } from './hello.component';
 import { OfertaModule } from "./oferta/oferta.module";
 
 @NgModule({
 
     declarations: [
         AppComponent,
+        EstudianteListComponent,
+        EstudianteDetailComponent,
     ],
     imports: [
         BrowserModule,
@@ -51,7 +56,7 @@ import { OfertaModule } from "./oferta/oferta.module";
             provide: HTTP_INTERCEPTORS,
             useClass: HttpErrorInterceptor,
             multi: true
-        }
+        }, EstudianteService,
     ]
 
 })
