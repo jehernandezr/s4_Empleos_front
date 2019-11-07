@@ -5,8 +5,9 @@ import {HttpClient} from '@angular/common/http';
 import {CuentaDeCobro} from './cuenta-de-cobro';
 import {CuentaDeCobroDetail} from '../cuenta-de-cobro/cuenta-de-cobro-detail';
 import {environment} from '../../environments/environment';
-const API_URL = environment.apiURL;
+const API_URL = "http://localhost:8080/s4_empleos-api/api/";
 const cuentas = '/cuentas';
+
 
 
 /**
