@@ -1,7 +1,7 @@
 
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ToastrModule} from 'ngx-toastr';
@@ -15,6 +15,8 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import {CalificacionService} from './califiaciones/calificacion.service';
+
+import { TarjetadecreditoModule } from './tarjetadecredito/tarjetadecredito.module';
 import { CalificacionesModule } from './califiaciones/calificaciones.module'
 
 
@@ -32,6 +34,7 @@ import { ContratistaModule } from './contratista/contratista.module';
     imports: [
         BrowserModule,
         CalificacionesModule,
+        TarjetadecreditoModule,
         AppRoutingModule,
         OfertaModule,
         ContratistaModule,
@@ -40,6 +43,7 @@ import { ContratistaModule } from './contratista/contratista.module';
         ModalDialogModule.forRoot(),
         AuthModule,
         FormsModule,
+        ReactiveFormsModule,
         ToastrModule.forRoot({
             timeOut: 10000,
             positionClass: 'toast-bottom-right',

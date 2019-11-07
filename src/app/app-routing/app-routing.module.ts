@@ -17,9 +17,27 @@ import { ContratistaDetailComponent } from '../contratista/contratista-detail/co
 
 
 
+import { TarjetadecreditolistComponent } from '../tarjetadecredito/tarjetadecreditolist/tarjetadecreditolist.component';
+import { TarjetadecreditoDetailComponent } from '../tarjetadecredito/tarjetadecreditodetail/tarjetadecreditodetail.component';
+
 const routes: Routes = [
 
     {
+        path: "tarjetas",
+        children: [
+      {
+        path: "list",
+        component: TarjetadecreditolistComponent
+      },
+      {
+        path: ":id",
+        component: TarjetadecreditoDetailComponent,
+        outlet: "detail"
+      }
+        ]
+    },
+
+     {
         path: 'calificaciones',
         children:[
             {
