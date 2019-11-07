@@ -23,10 +23,13 @@ import { CalificacionesModule } from './califiaciones/calificaciones.module'
 import { HelloComponent } from './hello.component';
 import { OfertaModule } from "./oferta/oferta.module";
 
+import { ContratistaModule } from './contratista/contratista.module';
+
 @NgModule({
 
     declarations: [
         AppComponent,
+        
     ],
     imports: [
         BrowserModule,
@@ -34,6 +37,7 @@ import { OfertaModule } from "./oferta/oferta.module";
         TarjetadecreditoModule,
         AppRoutingModule,
         OfertaModule,
+        ContratistaModule,
         HttpClientModule,
         BrowserAnimationsModule,
         ModalDialogModule.forRoot(),
