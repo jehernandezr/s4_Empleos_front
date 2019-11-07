@@ -1,28 +1,30 @@
+<button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModalLong">
+    Crear Oferta
+</button>
 <div class="row">
-    
-<div class="card-deck">
-    <div class="card mb-3" style="max-width: 540px;" *ngFor="let e of ofertas">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="..." class="card-img" alt="...">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">{{e.name}}</h5>
-                    <p class="card-text">{{e.id}}</p>
-                    <p class="card-text"><small class="text-muted">sff</small></p>
+   
 
-                    <a href="#" class="btn btn-primary" routerLink="/ofertas/{{e.id}}">Go somewhere</a>
+        <div class="card mb-3 col-3" style="max-width: 540px;" *ngFor="let e of ofertas">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="..." class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{e.nombre}}</h5>
+                        <p class="card-text">Descripcion: {{e.descripcion}}<br>Pago por hora:
+                            {{e.pagoPorHora | currency}}</p>
+                        <p class="card-text"><small class="text-muted">sff</small></p>
+
+                        <a href="#" class="btn btn-primary" routerLink="/ofertas/{{e.id}}">Mas info</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    
 </div>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-    Launch demo modal
-  </button>
+
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
