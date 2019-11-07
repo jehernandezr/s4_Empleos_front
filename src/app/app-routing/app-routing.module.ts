@@ -6,7 +6,25 @@ import {NgxPermissionsGuard} from 'ngx-permissions';
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 
+import { TarjetadecreditolistComponent } from '../tarjetadecredito/tarjetadecreditolist/tarjetadecreditolist.component';
+import { TarjetadecreditoDetailComponent } from '../tarjetadecredito/tarjetadecreditodetail/tarjetadecreditodetail.component';
+
 const routes: Routes = [
+
+    {
+        path: "tarjetas",
+        children: [
+      {
+        path: "list",
+        component: TarjetadecreditolistComponent
+      },
+      {
+        path: ":id",
+        component: TarjetadecreditoDetailComponent,
+        outlet: "detail"
+      }
+        ]
+    },
 
      {
         path: 'auth',

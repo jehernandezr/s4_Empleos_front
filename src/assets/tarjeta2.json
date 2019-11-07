@@ -1,0 +1,8 @@
+{
+    "id": 2,
+    "nombre":"MASTERCARD",
+    "numero":"5123897462871273",
+    "cvc":122,
+    "fecha":"11/24",
+    "titular":"Lars Ulrich"
+  }
