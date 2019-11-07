@@ -26,34 +26,12 @@ const routes: Routes = [
             {
                 path:':id',
                 component:CalificaionDetailComponent,
-                outlet: 'detail'
+                
             }
         ]
     },
-    {
+         
 
-        path: 'ofertas',
-        children:[
-            {
-                path:'list',
-                component: OfertaListComponent
-            },
-            {
-                path:':id',
-                component:OfertaDetailComponent
-            }
-        ]
-    },
-
-     
-    {
-        path: 'home',
-        component: AuthLoginComponent
-    },
-    {
-        path: '**',
-        redirectTo: 'home',
-    },
     {
         path: 'ofertas',
         children: [{
@@ -63,7 +41,7 @@ const routes: Routes = [
         {
           path: ':id',
           component: OfertaDetailComponent,
-          outlet: 'detail'
+         
         }
         ]
       }

@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { Oferta } from '../oferta';
-import { OfertaDetail } from './oferta-detail';
+import { Oferta } from './oferta';
+import { OfertaDetail } from './oferta-detail/oferta-detail';
 
 const API_URL = "../../assets/";
 const ofertas = 'oferta.json';
