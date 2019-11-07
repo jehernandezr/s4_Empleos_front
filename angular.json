@@ -101,7 +101,7 @@
                 }
             }
         },
-        "s4_empleos-Front-e2e": {
+        "s4_empleos-front-e2e": {
             "root": "e2e",
             "sourceRoot": "e2e",
             "projectType": "application",

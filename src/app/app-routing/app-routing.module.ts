@@ -5,6 +5,14 @@ import {NgxPermissionsGuard} from 'ngx-permissions';
 
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
+import { OfertaListComponent } from '../oferta/oferta-list/oferta-list.component';
+import { OfertaDetailComponent } from '../oferta/oferta-detail/oferta-detail.component';
+
+import { CalificacionesListComponent } from '../califiaciones/calificaciones-list/calificaciones-list.component';
+import { CalificaionDetailComponent } from  '../califiaciones/calificaciones-detail/calificaciones-detail.component';
+
+
+
 
 import { TarjetadecreditolistComponent } from '../tarjetadecredito/tarjetadecreditolist/tarjetadecreditolist.component';
 import { TarjetadecreditoDetailComponent } from '../tarjetadecredito/tarjetadecreditodetail/tarjetadecreditodetail.component';
@@ -27,38 +35,34 @@ const routes: Routes = [
     },
 
      {
-        path: 'auth',
-        children: [
+        path: 'calificaciones',
+        children:[
             {
-                path: 'login',
-                component: AuthLoginComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['GUEST']
-                    }
-                }
+                path:'list',
+                component: CalificacionesListComponent
             },
             {
-                path: ':sign-up',
-                component: AuthSignUpComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['GUEST']
-                    }
-                }
+                path:':id',
+                component:CalificaionDetailComponent,
+                
             }
         ]
     },
+         
+
     {
-        path: 'home',
-        component: AuthLoginComponent
-    },
-    {
-        path: '**',
-        redirectTo: 'home',
-    }
+        path: 'ofertas',
+        children: [{
+          path: 'list',
+          component: OfertaListComponent
+        },
+        {
+          path: ':id',
+          component: OfertaDetailComponent,
+         
+        }
+        ]
+      }
 ];
 
 @NgModule({

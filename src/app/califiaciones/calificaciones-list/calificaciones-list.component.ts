@@ -7,7 +7,7 @@ import { CalificacionService } from '../calificacion.service';
   templateUrl: './calificaciones-list.component.html',
   styleUrls: ['./calificaciones-list.component.css']
 })
-export class CalificacionesComponent implements OnInit {
+export class CalificacionesListComponent implements OnInit {
 
   constructor(private calificacionService: CalificacionService) { }
 

@@ -1,3 +1,4 @@
+
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -19,9 +20,11 @@ import { TarjetadecreditoModule } from './tarjetadecredito/tarjetadecredito.modu
 import { CalificacionesModule } from './califiaciones/calificaciones.module'
 
 
-
+import { HelloComponent } from './hello.component';
+import { OfertaModule } from "./oferta/oferta.module";
 
 @NgModule({
+
     declarations: [
         AppComponent,
     ],
@@ -30,6 +33,7 @@ import { CalificacionesModule } from './califiaciones/calificaciones.module'
         CalificacionesModule,
         TarjetadecreditoModule,
         AppRoutingModule,
+        OfertaModule,
         HttpClientModule,
         BrowserAnimationsModule,
         ModalDialogModule.forRoot(),
@@ -53,5 +57,6 @@ import { CalificacionesModule } from './califiaciones/calificaciones.module'
             multi: true
         }
     ]
+
 })
-export class AppModule {}
+export class AppModule { }
