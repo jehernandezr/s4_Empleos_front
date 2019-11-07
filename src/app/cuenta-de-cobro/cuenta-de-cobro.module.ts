@@ -5,9 +5,7 @@ import{CuentaDeCobroDetailComponent}from './cuenta-de-cobro-detail/cuenta-de-cob
 
 @NgModule({
   imports: [
-    CommonModule,
-    CuentaDeCobroListComponent,
-    CuentaDeCobroDetailComponent
+    CommonModule
   ],
   declarations: [CuentaDeCobroListComponent,CuentaDeCobroDetailComponent],
   exports:[CuentaDeCobroListComponent,CuentaDeCobroDetailComponent]
