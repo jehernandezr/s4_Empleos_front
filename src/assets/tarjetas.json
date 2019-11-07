@@ -1,0 +1,27 @@
+[{
+    "id": 1,
+    "cvc": 123,
+    "nombre": "VISA",
+    "numero": "4123897462871273",
+    "image":"https://upload.wikimedia.org/wikipedia/commons/1/16/Former_Visa_%28company%29_logo.svg"
+  }, {
+    "id": 2,
+    "cvc": 122,
+    "nombre": "MASTERCARD",
+    "numero": "5123897462871273",
+    "image":"https://upload.wikimedia.org/wikipedia/commons/7/72/MasterCard_early_1990s_logo.png"
+  },
+  {
+    "id": 3,
+    "cvc": 121,
+    "nombre": "VISA ELECTRON",
+    "numero": "4123897212871273",
+    "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Visa_Electron.svg/2000px-Visa_Electron.svg.png"
+  },
+  {
+    "id": 4,
+    "cvc": 120,
+    "nombre": "MAESTRO",
+    "numero": "5323897469971273",
+    "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Maestro_2016.svg/1200px-Maestro_2016.svg.png"
+  }]

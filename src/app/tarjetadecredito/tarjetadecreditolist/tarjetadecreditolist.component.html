@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="col-md-2">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Tipo tarjeta</th>
+                    <th>Cvc</th>
+                    <th>Numero</th>        
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let e of tarjetas">
+                    <td style ="cursor: pointer;"><a class = "figure-caption" [routerLink] ="['/tarjetas', { outlets: { 'detail': [e.id] } }]">{{e.nombre}}</a></td>
+                    <td>{{e.numero}}</td>
+                    <td>{{e.cvc}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

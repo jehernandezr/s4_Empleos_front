@@ -1,0 +1,8 @@
+{
+    "id": 1,
+    "nombre":"VISA",
+    "numero":"4123897462871273",
+    "cvc":123,
+    "fecha":"12/24",
+    "titular":"James Hetfield"
+  }

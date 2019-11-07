@@ -10,25 +10,18 @@ import { OfertaDetailComponent } from '../oferta/oferta-detail/oferta-detail.com
 
 import { CalificacionesListComponent } from '../califiaciones/calificaciones-list/calificaciones-list.component';
 import { CalificaionDetailComponent } from  '../califiaciones/calificaciones-detail/calificaciones-detail.component';
+import { ContratistaListComponent } from '../contratista/contratista-list/contratista-list.component';
+import { ContratistaDetailComponent } from '../contratista/contratista-detail/contratista-detail.component';
 
 
 
+
+
+import { TarjetadecreditolistComponent } from '../tarjetadecredito/tarjetadecreditolist/tarjetadecreditolist.component';
+import { TarjetadecreditoDetailComponent } from '../tarjetadecredito/tarjetadecreditodetail/tarjetadecreditodetail.component';
 
 const routes: Routes = [
 
-    {
-        path: 'calificaciones',
-        children:[{
-                path:'list',
-                component: CalificacionesListComponent
-            },
-            {
-                path:':id',
-                component:CalificaionDetailComponent,
-                outlet: 'detail'
-            }
-        ]
-    },  
     {
         path: 'home',
         component: AuthLoginComponent
@@ -36,6 +29,35 @@ const routes: Routes = [
     {
         path: '**',
         redirectTo: 'home',
+    },{
+
+        path: "tarjetas",
+        children: [
+      {
+        path: "list",
+        component: TarjetadecreditolistComponent
+      },
+      {
+        path: ":id",
+        component: TarjetadecreditoDetailComponent,
+        outlet: "detail"
+      }
+        ]
+    },
+
+     {
+        path: 'calificaciones',
+        children:[
+            {
+                path:'list',
+                component: CalificacionesListComponent
+            },
+            {
+                path:':id',
+                component:CalificaionDetailComponent,
+                
+            }
+        ]
     },
     {
         path: 'ofertas',
@@ -46,7 +68,20 @@ const routes: Routes = [
         {
           path: ':id',
           component: OfertaDetailComponent,
-          outlet: 'detail'
+         
+        }
+        ]
+      },
+      {
+        path: 'contratistas',
+        children: [{
+          path: 'list',
+          component: ContratistaListComponent
+        },
+        {
+          path: ':id',
+          component: ContratistaDetailComponent,
+         
         }
         ]
       }

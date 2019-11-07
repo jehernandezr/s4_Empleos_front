@@ -1,8 +1,9 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import {OfertaService} from '../oferta.service';
-import { Oferta } from '../../oferta';
+import { Oferta } from '../oferta';
 import { Router } from '@angular/router';
-import { OfertaDetail } from '../oferta-detail';
+import { OfertaDetail } from '../oferta-detail/oferta-detail';
+import { map, filter } from 'rxjs/operators';
 
 
 
@@ -15,10 +16,12 @@ export class OfertaListComponent implements OnInit {
 
   constructor(private ofertaService: OfertaService, private router:Router) { }
 
-  oferta_id: number;
+  
   selectedOferta: OfertaDetail;
   ngOnInit() {
     this.getOfertas();
+    
+    
   }
 
   ofertas: Oferta[];
@@ -26,10 +29,8 @@ export class OfertaListComponent implements OnInit {
         this.ofertaService.getOfertas().subscribe(ofertas => this.ofertas = ofertas);
     }
 
-    onSelected(oferta_id: number): void {
-      this.oferta_id = oferta_id;
-      this.selectedOferta = new OfertaDetail();
-      this.ofertaService.getOfertaDetail(oferta_id).subscribe(o => this.selectedOferta = o);
-    }
+   
+
+  
 
 }
