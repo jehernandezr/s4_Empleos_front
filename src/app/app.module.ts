@@ -22,7 +22,7 @@ import { CalificacionesModule } from './califiaciones/calificaciones.module'
 import { OfertaModule } from "./oferta/oferta.module";
 
 import { ContratistaModule } from './contratista/contratista.module';
-import{CuentaDeCobroModule} from './cuenta-de-cobro/cuenta-de-cobro.module'
+import{CuentaDeCobroModule} from './cuenta-de-cobro/cuenta-de-cobro.module';
 @NgModule({
 
     declarations: [

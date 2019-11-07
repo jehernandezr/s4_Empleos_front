@@ -13,25 +13,13 @@ import { CalificaionDetailComponent } from  '../califiaciones/calificaciones-det
 import { ContratistaListComponent } from '../contratista/contratista-list/contratista-list.component';
 import { ContratistaDetailComponent } from '../contratista/contratista-detail/contratista-detail.component';
 
-
-
-
-
 import { TarjetadecreditolistComponent } from '../tarjetadecredito/tarjetadecreditolist/tarjetadecreditolist.component';
 import { TarjetadecreditoDetailComponent } from '../tarjetadecredito/tarjetadecreditodetail/tarjetadecreditodetail.component';
 import{CuentaDeCobroListComponent} from '../cuenta-de-cobro/cuenta-de-cobro-list/cuenta-de-cobro-list.component';
 import{ CuentaDeCobroDetailComponent}from '../cuenta-de-cobro/cuenta-de-cobro-detail/cuenta-de-cobro-detail.component';
 
 const routes: Routes = [
-
-    {
-        path: 'home',
-        component: AuthLoginComponent
-    },
-    {
-        path: '**',
-        redirectTo: 'home',
-    },{
+{
 
         path: "tarjetas",
         children: [
