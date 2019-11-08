@@ -1,30 +1,60 @@
 <button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModalLong">
     Crear Oferta
 </button>
+
+
 <div class="row">
-   
+    <div class="col-3">
+        <div class="card" style="width: 95%;">
+            <div class="card-header bg-dark">
+                <p style="color:white; font-size:20px;">Filtros</p>
+            </div>
+            <div class="card-body">
+                <div class="input-group mb-3">
 
-        <div class="card mb-3 col-3" style="max-width: 540px;" *ngFor="let e of ofertas">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="..." class="card-img" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{e.nombre}}</h5>
-                        <p class="card-text">Descripcion: {{e.descripcion}}<br>Pago por hora:
-                            {{e.pagoPorHora | currency}}</p>
-                        <p class="card-text"><small class="text-muted">sff</small></p>
-
-                        <a href="#" class="btn btn-primary" routerLink="/ofertas/{{e.id}}">Mas info</a>
-                    </div>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                        aria-describedby="basic-addon1">
                 </div>
             </div>
+
         </div>
-    
+    </div>
+
+    <div class="col-9 ">
+        <nav class="nav bg-dark orden">
+            <p class="nav-link blanco">Ordenar por: </p>
+            <a class="nav-link active blanco" href="#">Active</a>
+            <a class="nav-link blanco" href="#">Link</a>
+            <a class="nav-link blanco" href="#">Link</a>
+        </nav>
+      <div *ngFor="let e of ofertas">  
+        <div class="card " *ngIf="e.tipoOferta===1">
+                
+                <div class="card-body">
+                    <h4 class="card-text"><a class="nav-link " routerLink="/ofertas/{{e.id}}"
+                            routerLinkActive="active">{{e.nombre}}</a></h4>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                </div>
+            
+
+
+        </div>
+        <div class="card  border-danger" *ngIf="e.tipoOferta===2">
+                <div class="card-header bg-danger blanco">Oferta Express</div>
+                <div class="card-body">
+                    <h4 class="card-text"><a class="nav-link " routerLink="/ofertas/{{e.id}}"
+                            routerLinkActive="active">{{e.nombre}}</a></h4>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                </div>
+            
+
+
+        </div>
+       </div>
+    </div>
 </div>
-
-
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
