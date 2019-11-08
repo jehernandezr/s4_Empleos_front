@@ -9,8 +9,8 @@ import { catchError, map, tap } from "rxjs/operators";
 const API_URL = '../../assets/';
 const calificaciones = 'calificaciones.json';
 */
-const API_URL2 = environment.apiURL;
-const calificaciones2 = '/calificaciones';
+const API_URL2 = "http://localhost:8080/s4_empleos-api/api/";
+const calificaciones2 = 'calificaciones/';
 
 @Injectable({ providedIn: "root" })
 export class CalificacionService {
@@ -38,7 +38,7 @@ export class CalificacionService {
     }*/
 
     createCalificacion(calificacion: Calificacion): Observable<Calificacion> {
-        return this.http.post<Calificacion>(API_URL2, calificacion, this.httpOptions).pipe(tap((cal: Calificacion) => console.log(`added calificacion w/ ${cal.nota} id=${cal.id}`)));
+        return this.http.post<Calificacion>(API_URL2+calificaciones2, calificacion, this.httpOptions).pipe(tap((cal: Calificacion) => console.log(`added calificacion w/ ${cal.nota} id=${cal.id}`)));
       }
     
 
