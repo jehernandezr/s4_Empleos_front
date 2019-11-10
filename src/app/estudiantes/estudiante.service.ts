@@ -9,13 +9,16 @@ const API_URL = "../../assets/";
 const estudiantes = "estudiantes.json";
 const estudiante = "estudiante";
 
+const API = "http://localhost:8080/s4_empleos-api/api/estudiantes/"
+
 @Injectable()
 export class EstudianteService {
 
   constructor(private http: HttpClient) { }
 
   getEstudiantes(): Observable<Estudiante[]> {
-    return this.http.get<Estudiante[]>(API_URL + estudiantes);
+    //return this.http.get<Estudiante[]>(API_URL + estudiantes);
+    return this.http.get<Estudiante[]>(API);
   }
 
   getEstudiante(id: number): Observable<EstudianteDetail> {
