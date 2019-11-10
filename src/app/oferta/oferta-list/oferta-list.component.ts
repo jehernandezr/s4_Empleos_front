@@ -24,6 +24,10 @@ export class OfertaListComponent implements OnInit {
     
   }
 
+  numOfertas():number{
+    return this.ofertas.length;
+  }
+
   ofertas: Oferta[];
   getOfertas(): void {
         this.ofertaService.getOfertas().subscribe(ofertas => this.ofertas = ofertas);

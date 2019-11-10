@@ -1,19 +1,27 @@
+<div class="container">
+<div class="row">
+        <div class="col-12">
 <button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModalLong">
     Crear Oferta
 </button>
-
-
+        </div>
+       
+</div>
+</div>
 <div class="row">
     <div class="col-3">
         <div class="card" style="width: 95%;">
             <div class="card-header bg-dark">
                 <p style="color:white; font-size:20px;">Filtros</p>
+
             </div>
             <div class="card-body">
                 <div class="input-group mb-3">
 
                     <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                        aria-describedby="basic-addon1">
+                        aria-describedby="basic-addon1"><br><br>
+                        <button type="button"  class="btn btn-block btn-dark">Buscar</button>
+
                 </div>
             </div>
 
@@ -23,9 +31,9 @@
     <div class="col-9 ">
         <nav class="nav bg-dark orden">
             <p class="nav-link blanco">Ordenar por: </p>
-            <a class="nav-link active blanco" href="#">Active</a>
-            <a class="nav-link blanco" href="#">Link</a>
-            <a class="nav-link blanco" href="#">Link</a>
+            <a class="nav-link active blanco" href="#">Fecha</a>
+            <a class="nav-link blanco" href="#">Pago</a>
+            <a class="nav-link blanco" href="#">Horas</a>
         </nav>
       <div *ngFor="let e of ofertas">  
         <div class="card " *ngIf="e.tipoOferta===1">
