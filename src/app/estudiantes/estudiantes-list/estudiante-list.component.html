@@ -1,0 +1,17 @@
+<div class="card-group">
+<div *ngFor = "let estudiante of estudiantes" class="card" style="width: 18rem;">
+  <img src="/images/user.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{estudiante.nombre}}</h5>
+    <ul>
+      <li>semestre: {{estudiante.semestre}}</li>
+      <li>carrera:{{estudiante.carrera}}</li>
+    </ul>
+    <a (click)="onSelected(estudiante.id)" href="javascript:;" class="btn btn-primary">Ver perfil</a>
+  </div>
+</div>
+</div>
+
+<div *ngIf="selectedDetail != undefined">
+  <app-estudiante-detail [estudianteDetail]="selectedDetail"></app-estudiante-detail>
+</div>

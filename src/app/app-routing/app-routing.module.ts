@@ -17,6 +17,8 @@ import { TarjetadecreditolistComponent } from '../tarjetadecredito/tarjetadecred
 import { TarjetadecreditoDetailComponent } from '../tarjetadecredito/tarjetadecreditodetail/tarjetadecreditodetail.component';
 import{CuentaDeCobroListComponent} from '../cuenta-de-cobro/cuenta-de-cobro-list/cuenta-de-cobro-list.component';
 import{ CuentaDeCobroDetailComponent}from '../cuenta-de-cobro/cuenta-de-cobro-detail/cuenta-de-cobro-detail.component';
+import { EstudianteListComponent } from '../estudiantes/estudiantes-list/estudiante-list.component';
+import { EstudianteDetailComponent } from '../estudiantes/estudiantes-detail/estudiante-detail.component';
 
 import{FacturaListComponent} from '../factura/factura-list/factura-list.component';
 import{ FacturaDetailComponent}from '../factura/factura-detail/factura-detail.component';
@@ -34,6 +36,35 @@ const routes: Routes = [
         component: TarjetadecreditoDetailComponent,
         outlet: "detail"
       }
+    ]
+},
+
+    {
+        path: 'estudiantes',
+        children:[
+            {
+                path:'list',
+                component: EstudianteListComponent
+            },
+            /*{
+                path:':id',
+                component: EstudianteDetailComponent,
+                outlet: 'detail'
+            }*/
+        ]
+    },
+    {
+        path: 'calificaciones',
+        children:[
+            {
+                path:'list',
+                component: CalificacionesListComponent
+            },
+            /*{
+                path:':id',
+                component:CalificaionDetailComponent,
+                outlet: 'detail'
+            }*/
         ]
     },
 

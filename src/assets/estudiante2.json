@@ -1,0 +1,12 @@
+{
+  "id":2,
+  "company": "Samsung",
+  "name": "Galaxy S10",
+  "image":"https://falabella.scene7.com/is/image/FalabellaCO/3820955?wid=544&hei=544&qlt=70&anchor=750,750&crop=0,0,0,0",
+  "price": 4000000,
+  "stars": 4.8,
+  "description":"El resultado de 10 años de novedades pioneras en dispositivos móviles, Galaxy S10e, S10 y S10+ presentan la próxima generación de innovación móvil. Completamente rediseñado para eliminar las interrupciones de tu vista. Pantalla Infinity, perfección desde los píxeles. La pantalla Dynamic AMOLED de la nueva generación de smartphones cuenta con la certificación HDR10+, que ofrece colores y contrastes increíblemente reales en cada escena, incluso en las oscuras. Y la pantalla más brillante te ayuda a ver mejor incluso a la luz del día. En combinación con altavoces estéreo y Dolby Atmos, la experiencia se vuelve realmente envolvente. Multicámara de nivel superior que te convierte en todo un profesional. Capta un mundo más amplio. Usa la cámara ultra-ancha para tomar fotos asombrosas y cinematográficas con un campo de visión de 123 grados.",
+  "color":"Azul",
+  "capacity": 512,
+  "stock": 80
+}

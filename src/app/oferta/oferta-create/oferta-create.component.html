@@ -17,10 +17,27 @@
 		<label for="categoria">
       Categoria
     </label>
-		<input id="categoria" 
-     class="form-control"
-     formControlName="categoria"
-     placeholder="Categoria">
+		
+
+     <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Options</label>
+        </div>
+        <select class="custom-select" formControlName="categoria" id="categoria">
+          <option selected>Choose...</option>
+          <option value="Ventas">Ventas</option>
+          <option value="Logistica">Logistica</option>
+          <option value="Transporte">Transporte</option>
+          <option value="Administracion">Administración</option>
+          <option value="Educacion">Educación</option>
+          <option value="Publicidad">Publicidad</option>
+          <option value="Investigacion">Investigación</option>
+          <option value="Diseño / Artes">Diseño / Artes</option>
+          <option value="Legal">Legal</option>
+          <option value="Otros">Otros</option>
+          
+        </select>
+      </div>
 
 		
   </div>

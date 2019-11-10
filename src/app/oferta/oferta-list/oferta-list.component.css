@@ -8,3 +8,19 @@
 .orden{
     margin-bottom: 30px;
 }
+
+#scroll {
+    overflow-y: scroll;
+    white-space: nowrap;
+    max-height: 40%;
+    
+    }
+
+.card::-webkit-scrollbar{
+    width: 7px;
+    background: white;
+}
+
+.card::-webkit-scrollbar-thumb{
+    background: black;
+}

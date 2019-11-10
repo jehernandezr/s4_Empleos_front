@@ -1,0 +1,22 @@
+[
+  {
+    "calificacionPromedio": 2.0,
+    "carrera": "Sistemas",
+    "horarioDeTrabajo": "a",
+    "correo": "aajkwdnakd@uniandes.edu.co",
+    "nombre": "David",
+    "semestre": 4,
+    "id": 1,
+    "idMedioDePago": 0
+  },
+  {
+    "calificacionPromedio": 2.0,
+    "carrera": "Sistemas",
+    "horarioDeTrabajo": "a",
+    "correo": "aajkwdnakd@uniandes.edu.co",
+    "nombre": "David2",
+    "semestre": 4,
+    "id": 2,
+    "idMedioDePago": 0
+  }
+]

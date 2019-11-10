@@ -1,0 +1,12 @@
+{
+  "id":3,
+  "company":"Motorola",
+  "name": "One Zoom",
+  "image":"https://falabella.scene7.com/is/image/FalabellaCO/4130901?wid=544&hei=544&qlt=70&anchor=750,750&crop=0,0,0,0",
+  "price": 3700000,
+  "stars": 4.3,
+  "description":"Presentamos el nuevo motorolaone zoom con su sistema de cuatro cámaras. Con un sensor de 48 MP1 y estabilizador óptico de imagen, zoom óptico de alta resolución, además de un lente ultra gran angular. Asombroso desde cualquier ángulo. Sistema de 4 cámaras con sensor de 48 MP y Night Vision: Toma fotos bien iluminadas incluso de noche evitando que tus fotos salgan borrosas por el movimiento natural de tus manos gracias al estabilizador óptico de imagen. Zoom óptico de alta resolución y ultra gran angular: Haz un acercamiento sin perder la calidad de la imagen y obtén 4 veces más área de visión2 en la toma para obtener impresionantes panorámicas. Garantía del proveedor 1 año. Información Adicional: La memoria interna y la RAM disponibles para el usuario dependen del sistema operativo y las aplicaciones precargadas.",
+  "color":"Negro",
+  "capacity": 256,
+  "stock": 30
+}

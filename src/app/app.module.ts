@@ -22,6 +22,10 @@ import { CalificacionesModule } from './califiaciones/calificaciones.module';
 import{  FacturaModule } from './factura/factura.module';
 
 
+import { EstudianteModule } from "./estudiantes/estudiante.module";
+import { EstudianteListComponent } from "./estudiantes/estudiantes-list/estudiante-list.component";
+import { EstudianteDetailComponent } from "./estudiantes/estudiantes-detail/estudiante-detail.component";
+import { EstudianteService } from "./estudiantes/estudiante.service";
 
 import { OfertaModule } from "./oferta/oferta.module";
 
@@ -32,6 +36,8 @@ import{CuentaDeCobroModule} from './cuenta-de-cobro/cuenta-de-cobro.module';
     declarations: [
         AppComponent,
         
+        EstudianteListComponent,
+        EstudianteDetailComponent,
     ],
     imports: [
         BrowserModule,
@@ -64,7 +70,7 @@ import{CuentaDeCobroModule} from './cuenta-de-cobro/cuenta-de-cobro.module';
             provide: HTTP_INTERCEPTORS,
             useClass: HttpErrorInterceptor,
             multi: true
-        }
+        }, EstudianteService,
     ]
 
 })
