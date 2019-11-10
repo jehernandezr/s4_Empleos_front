@@ -1,0 +1,153 @@
+<form [formGroup]="clientForm" (ngSubmit)="!clientForm.invalid && createOferta(clientForm.value)">
+
+	<div class="form-group mx-sm-3 mb-2">
+		<label for="nombre">
+      Name
+    </label>
+		<input novalidate
+    id="nombre"
+    class="form-control"
+      formControlName="nombre"
+      placeholder="Nombre de la oferta">
+
+		
+	</div>
+
+	<div class="form-group  mx-sm-3 mb-2">
+		<label for="categoria">
+      Categoria
+    </label>
+		<input id="categoria" 
+     class="form-control"
+     formControlName="categoria"
+     placeholder="Categoria">
+
+		
+  </div>
+  <div class="form-group  mx-sm-3 mb-2">
+		<label for="descripcion">
+      Descripcion requerida
+    </label>
+		<input id="descripcion" type="text"
+     class="form-control"
+     formControlName="descripcion"
+     placeholder="Descripcion de la oferta">
+
+		
+  </div>
+
+  <input type="checkbox" id="estaAbierta" formControlName="estaAbierta"/>
+
+  <div class="form-group  mx-sm-3 mb-2">
+		<label for="horario">
+      Horario
+    </label>
+		<input id="horario" type="text"
+     class="form-control"
+     formControlName="horario"
+     placeholder="Horario de la oferta">
+
+		
+  </div>
+
+  <div class="form-group  mx-sm-3 mb-2">
+		<label for="horasDeTrabajo">
+      Horas de Trabajo
+    </label>
+		<input id="horasDeTrabajo" type="number" min="0" oninput="this.value = Math.abs(this.value)"
+     class="form-control"
+     formControlName="horasDeTrabajo"
+     placeholder="horasDeTrabajo de la oferta">
+
+		
+  </div>
+
+  <div class="form-group  mx-sm-3 mb-2">
+		<label for="numeroDeVacantes">
+      numero de vacantes
+    </label>
+		<input id="numeroDeVacantes" type="number" min="0" oninput="this.value = Math.abs(this.value)"
+     class="form-control"
+     formControlName="numeroDeVacantes"
+     placeholder="numeroDeVacantes de la oferta">
+
+		
+  </div>
+
+  <div class="form-group  mx-sm-3 mb-2">
+		<label for="pagoPorHora">
+      pago por hora
+    </label>
+		<input id="pagoPorHora" type="number" min="0" oninput="this.value = Math.abs(this.value)"
+     class="form-control"
+     formControlName="pagoPorHora"
+     placeholder="pagoPorHora de la oferta">
+
+		
+  </div>
+
+  <div class="form-group  mx-sm-3 mb-2">
+		<label for="porcentajePagoAdicional">
+      porcentaje
+    </label>
+		<input id="porcentajePagoAdicional" type="number" min="0" oninput="this.value = Math.abs(this.value)"
+     class="form-control"
+     formControlName="porcentajePagoAdicional"
+     placeholder="porcentajePagoAdicional de la oferta">
+
+		
+  </div>
+
+  <div class="form-group  mx-sm-3 mb-2">
+		<label for="requisitos">
+      requisitos
+    </label>
+		<input id="requisitos" type="text" 
+     class="form-control"
+     formControlName="requisitos"
+     placeholder="requisitos de la oferta">
+
+		
+  </div>
+  <div class="form-group  mx-sm-3 mb-2">
+		<label for="rutaImagen">
+      rutaImagen
+    </label>
+		<input id="rutaImagen" type="text"
+     class="form-control"
+     formControlName="rutaImagen"
+     placeholder="rutaImagen de la oferta">
+
+		
+  </div>
+
+  <div class="form-group  mx-sm-3 mb-2">
+		<label for="tiempoMaximoAplicacion">
+      tiempoMaximoAplicacion
+    </label>
+		<input id="tiempoMaximoAplicacion" type="number" min="0" oninput="this.value = Math.abs(this.value)"
+     class="form-control"
+     formControlName="tiempoMaximoAplicacion"
+     placeholder="tiempoMaximoAplicacion de la oferta">
+
+		
+  </div>
+
+  <div class="form-group  mx-sm-3 mb-2">
+		<label for="tipoOferta">
+      tipoOferta
+    </label>
+		<input id="tipoOferta" type="number" min="0" oninput="this.value = Math.abs(this.value)"
+     class="form-control"
+     formControlName="tipoOferta"
+     placeholder="tipoOferta de la oferta">
+
+		
+  </div>
+  
+  
+    <button class="button mx-sm-3 mb-2" type="submit">Create</button>
+    
+
+
+</form>

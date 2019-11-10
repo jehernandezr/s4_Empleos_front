@@ -3,6 +3,6 @@ export class OfertaDetail extends Oferta{
 
     
 
-  description: string;
+  
 
 }

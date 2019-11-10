@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { OfertaService } from '../oferta.service';
-import { OfertaDetail } from '../oferta-detail';
+import { OfertaDetail } from './oferta-detail';
+
 
 
 @Component({
@@ -14,9 +15,11 @@ export class OfertaDetailComponent implements OnInit {
   constructor(private ofertaService: OfertaService,
     private route: ActivatedRoute) { }
 
-    @Input() ofertaDetail: OfertaDetail;
+     ofertaDetail: OfertaDetail;
 
-    oferta_id: number;
+     @Input() oferta_id: number;
+
+     loader:any;
 
     getOfertaDetail(): void {
       this.ofertaService.getOfertaDetail(this.oferta_id)
@@ -27,13 +30,25 @@ export class OfertaDetailComponent implements OnInit {
 
 
 
-  ngOnInit() {
-    this.oferta_id = +this.route.snapshot.paramMap.get('id');
-    if (this.oferta_id) {
+    onLoad(params) {
+
+      this.oferta_id = parseInt(params['id']);
+      console.log(" en detail " + this.oferta_id);
       this.ofertaDetail = new OfertaDetail();
       this.getOfertaDetail();
     }
-
-  }
+    /**
+    * The method which initializes the component
+    * We need to initialize the editorial so it is never considered as undefined
+    */
+    ngOnInit() {
+      
+       this.loader = this.route.params.subscribe((params: Params) => this.onLoad(params));
+      
+  
+    }
+    ngOnDestroy() {
+      this.loader.unsubscribe();
+    }
 
 }

@@ -1,7 +1,7 @@
 
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ToastrModule} from 'ngx-toastr';
@@ -10,12 +10,17 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
 import {NgxPermissionsModule} from 'ngx-permissions';
 import { ModalDialogModule } from 'ngx-modal-dialog';
+import {CommonModule} from '@angular/common';
+
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
-import {CalificacionService} from './califiaciones/calificacion.service';
-import { CalificacionesModule } from './califiaciones/calificaciones.module'
+
+import { TarjetadecreditoModule } from './tarjetadecredito/tarjetadecredito.module';
+import { CalificacionesModule } from './califiaciones/calificaciones.module';
+import{  FacturaModule } from './factura/factura.module';
+
 
 import { EstudianteModule } from "./estudiantes/estudiante.module";
 import { EstudianteListComponent } from "./estudiantes/estudiantes-list/estudiante-list.component";
@@ -24,23 +29,32 @@ import { EstudianteService } from "./estudiantes/estudiante.service";
 
 import { OfertaModule } from "./oferta/oferta.module";
 
+import { ContratistaModule } from './contratista/contratista.module';
+import{CuentaDeCobroModule} from './cuenta-de-cobro/cuenta-de-cobro.module';
 @NgModule({
 
     declarations: [
         AppComponent,
         EstudianteListComponent,
         EstudianteDetailComponent,
+        
     ],
     imports: [
         BrowserModule,
         CalificacionesModule,
+        FacturaModule,
+        TarjetadecreditoModule,
+        CuentaDeCobroModule,
         AppRoutingModule,
         OfertaModule,
+        ContratistaModule,
         HttpClientModule,
         BrowserAnimationsModule,
+        CommonModule,
         ModalDialogModule.forRoot(),
         AuthModule,
         FormsModule,
+        ReactiveFormsModule,
         ToastrModule.forRoot({
             timeOut: 10000,
             positionClass: 'toast-bottom-right',

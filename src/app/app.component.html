@@ -22,6 +22,18 @@
 			<a class="nav-link active" routerLink="estudiantes/list" routerLinkActive="active">Estudiantes</a>
 		</li>
 		
+		<li class="nav-item">
+			<a class="nav-link active" routerLink="contratistas/list" routerLinkActive="active">Contratistas</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link active" routerLink="tarjetas/list" routerLinkActive="active">Tarjetas</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link active" routerLink="cuentas/list" routerLinkActive="active">CuentasDeCobro</a>
+		</li>
+		<li class="nav-item">
+				<a class="nav-link active" routerLink="facturas/list" routerLinkActive="active">Facturas</a>
+		</li>
 	  </ul>
 	</div>
   </nav>
@@ -30,11 +42,13 @@
   <!--<app-celular-list></app-celular-list>-->
 
 
-<div class="container-fluid">
-		<div class="col">
+<div class="container">
+		
 			<router-outlet></router-outlet>
-		</div>
-		<div class="col">
 			<router-outlet name="detail"></router-outlet>
-		</div>
+			
+		
+		
+		
 </div>
+

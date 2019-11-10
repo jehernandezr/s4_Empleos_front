@@ -1,27 +1,86 @@
-<div class="container-fluid">
-    <div class="col-md-2">
-        <table class="table table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Oferta</th>  
-                    <th>id</th>  
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor = "let e of ofertas">
+<div class="container">
+<div class="row">
+        <div class="col-12">
+<button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModalLong">
+    Crear Oferta
+</button>
+        </div>
+       
+</div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <div class="card" style="width: 95%;">
+            <div class="card-header bg-dark">
+                <p style="color:white; font-size:20px;">Filtros</p>
 
-                    
-                    <td>{{e.name}}</td>
-                    <td>{{e.id}}</td>
-                  
-                </tr>
-            </tbody>
-        </table>
-        <div class="border row">
-            <div class="col">
-                <div *ngIf="selectedOferta">
-                    <app-oferta-detail [ofertaDetail]="selectedOferta"> </app-oferta-detail>
+            </div>
+            <div class="card-body">
+                <div class="input-group mb-3">
+
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                        aria-describedby="basic-addon1"><br><br>
+                        <button type="button"  class="btn btn-block btn-dark">Buscar</button>
+
                 </div>
             </div>
+
         </div>
     </div>
+
+    <div class="col-9 ">
+        <nav class="nav bg-dark orden">
+            <p class="nav-link blanco">Ordenar por: </p>
+            <a class="nav-link active blanco" href="#">Fecha</a>
+            <a class="nav-link blanco" href="#">Pago</a>
+            <a class="nav-link blanco" href="#">Horas</a>
+        </nav>
+      <div *ngFor="let e of ofertas">  
+        <div class="card " *ngIf="e.tipoOferta===1">
+                
+                <div class="card-body">
+                    <h4 class="card-text"><a class="nav-link " routerLink="/ofertas/{{e.id}}"
+                            routerLinkActive="active">{{e.nombre}}</a></h4>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                </div>
+            
+
+
+        </div>
+        <div class="card  border-danger" *ngIf="e.tipoOferta===2">
+                <div class="card-header bg-danger blanco">Oferta Express</div>
+                <div class="card-body">
+                    <h4 class="card-text"><a class="nav-link " routerLink="/ofertas/{{e.id}}"
+                            routerLinkActive="active">{{e.nombre}}</a></h4>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                </div>
+            
+
+
+        </div>
+       </div>
+    </div>
+</div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <app-oferta-create></app-oferta-create>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button  class="btn btn-primary" type="submit">Crear Oferta</button>
+        </div>
+      </div>
+    </div>
+  </div>

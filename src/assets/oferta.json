@@ -1,19 +1,18 @@
-[{
+[
+  {
+    "categoria": "lala",
+    "descripcion": "dsdfsdfsdfsdfsdfds fdsfdsfds",
+    "estaAbierta": true,
+    "horario": "sdsdf",
+    "horasDeTrabajo": 20.0,
     "id": 1,
-    "name": "Oveja Negra"
-  }, {
-    "id": 2,
-    "name": "Siruela"
-  },
-  {
-    "id": 3,
-    "name": "Plaza y Janes"
-  },
-  {
-    "id": 4,
-    "name": "Norma"
-  },
-  {
-    "id": 5,
-    "name": "Normgtfa"
-  }]
+    "nombre": "hsdaj",
+    "numeroDeVacantes": 2,
+    "pagoPorHora": 10000.0,
+    "porcentajePagoAdicional": 15,
+    "requisitos": "asdada",
+    "rutaImagen": "dfdfs",
+    "tiempoMaximoAplicacion": 5,
+    "tipoOferta": 1
+  }
+]

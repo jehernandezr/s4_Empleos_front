@@ -1,25 +1,53 @@
+<br>
+<br>
 <div class="container-fluid">
-	<div class="col-md-2">
+	<div class="row">
+
+			<div  calss="col-7">
+
 		<table class="table table-striped">
 			<thead class="thead-dark">
 				<tr>
-					
-					  <th>id</th>
-					  <th>Calificacion</th>
-					  <th>Comentario</th>
+					<th>ID</th>
+					<th>Nota</th>
+					<th>Comentario</th>
+			 
 				</tr>
 			</thead>
 			<tbody>
 				<tr *ngFor="let e of calificaciones">
-			
-
-						<td style="cursor: pointer;">
-								<a class="figure-caption" routerLink ="/calificaciones/{{e.idOferta} }" >{{e.idOferta}}</a>
-							</td>
-
+					<td>{{e.id}}</td>		
+					<td> {{e.nota}}</td>
 					<td>{{e.comentario}}</td>
-          			<td>{{e.nota}}</td>
+							 	
 				</tr>
 			</tbody>
 		</table>
+			</div>
+
+		<div class="col-sm">
+					<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+							  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							  </button>
+							</div>
+							<div class="modal-body">
+								<app-calificacion-create></app-calificacion-create>
+							</div>
+						  </div>
+						</div>
+				</div>
+				<div  calss="col-sm">
+					<button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModalLong">
+						Crear Califiacaion
+					</button>
+
+				</div>
+
+			</div> 
+
 	</div>

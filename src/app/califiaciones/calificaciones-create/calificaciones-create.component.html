@@ -1,0 +1,31 @@
+<form [formGroup]="clientForm" (ngSubmit)="!clientForm.invalid && createCalificacion(clientForm.value)">
+    
+        <div class="form-group  mx-sm-3 mb-2">
+            <label for="nota">
+            Nota
+            </label>
+         <input id="nota" type="number"
+            class="form-control"
+            formControlName="nota"
+            placeholder="La nota del estudiante por hacer el trabajo">
+      </div>
+
+            <div class="form-group  mx-sm-3 mb-2">
+                <label for="comentario">
+               Comentario
+                </label>
+                <input id="comentario" type="text"
+               class="form-control"
+               formControlName="comentario"
+               placeholder="EL comentario del estudiante por hacer el trabajo">
+            </div>
+
+            <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button  class="btn btn-primary" type="submit">Crear Calificaion</button>
+                </div>
+    
+    </form>
+ 
+    
+    

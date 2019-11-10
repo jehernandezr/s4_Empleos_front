@@ -1,0 +1,58 @@
+<br>
+<br>
+	
+<div class="container-fluid">
+<div class="row">
+
+	
+
+		<div class ="col-7">
+			<table class="table table-striped">
+				<thead class="thead-dark">
+					<tr>
+					<th>ID</th>
+					<th>Date</th>
+					<th>Valor</th>
+			 
+				</tr>
+			</thead>
+				<tbody>
+					<tr *ngFor="let e of facturas">
+						<td>{{e.id}}</td>		
+                    	<td> {{e.fecha}}</td>
+						<td>{{e.valor}}</td>
+							 	
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+
+		<div class="col-sm">
+					<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+						  <div class="modal-content">
+								<div class="modal-header">
+							  		<h5 class="modal-title" id="exampleModalLongTitle">Crear factura</h5>
+							  		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+							  		</button>
+								</div>
+							
+								<div class="modal-body">
+									<app-factura-create></app-factura-create>
+								</div>
+							</div>
+						</div>
+				    </div>
+		</div>
+
+		<div class ="col-sm">
+				<br>
+						<button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModalLong">
+							Crear Factura
+						</button>
+				</div>
+
+	</div> 
+</div>
