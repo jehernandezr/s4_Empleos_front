@@ -48,12 +48,12 @@ export class FacturaCreateComponent implements OnInit {
    createFactura(newFac: Factura){
 
     console.warn("el cliente fue creado", newFac);
+/*
+    let dateB: Date = new Date(newFac.fecha.year, newFac.fecha.month - 1, newFac.fecha.day,newFac.fecha.hours,newFac.fecha.minutes,newFac.fecha.seconds);
 
-    let dateB: Date = new Date(newFac.fecha.year, newFac.fecha.month - 1, newFac.fecha.day);
-
-    newFac.fecha = this.dp.transform(dateB, 'yyyy-MM-dd');
-    
-
+    newFac.fecha = this.dp.transform(dateB, 'yyyy-MM-ddThh:mm:ssTZD');
+  */  
+    console.warn("el cliente fue creado", newFac);
     this.facturaService.createFactura(newFac).subscribe(client => {
         this.facturas.push(client);
         this.showSuccess();

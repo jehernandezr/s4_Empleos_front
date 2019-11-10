@@ -1,5 +1,7 @@
 <form [formGroup]="clientForm" (ngSubmit)="!clientForm.invalid && createFactura(clientForm.value)">
       
+    <div class="container">
+    <div class="row">
 
       <div class="form-group">
             <label for="fecha"><b>Fecha de creacion</b></label>
@@ -16,12 +18,12 @@
 
 
             <div class="form-group  mx-sm-3 mb-2">
-                <label for="comentario">
+                <label for="valor">
                Valor
                 </label>
-                <input id="comentario" type="text"
+                <input id="valor" 
                class="form-control"
-               formControlName="comentario"
+               formControlName="valor"
                placeholder="EL valor de la factura a crear">
             </div>
 
@@ -30,6 +32,9 @@
                     <button  class="btn btn-primary" type="submit">Crear Factura</button>
 
                   </div>
+
+    </div>
+</div>
     
     </form>
  
