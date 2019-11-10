@@ -46,7 +46,8 @@ export class FacturaCreateComponent implements OnInit {
     * Creates an author
     */
    createFactura(newFac: Factura){
-
+    console.log("Intentando crear factura");
+    console.log(newFac);
     console.warn("el cliente fue creado", newFac);
 /*
     let dateB: Date = new Date(newFac.fecha.year, newFac.fecha.month - 1, newFac.fecha.day,newFac.fecha.hours,newFac.fecha.minutes,newFac.fecha.seconds);

@@ -23,9 +23,12 @@ import{ CuentaDeCobroDetailComponent}from '../cuenta-de-cobro/cuenta-de-cobro-de
 
 import{FacturaListComponent} from '../factura/factura-list/factura-list.component';
 import{ FacturaDetailComponent}from '../factura/factura-detail/factura-detail.component';
-const routes: Routes = [
-{
 
+import{HomeComponent} from '../home/home-component/home-component.component';
+
+
+const routes: Routes = [
+      {
         path: "tarjetas",
         children: [
       {
@@ -39,6 +42,10 @@ const routes: Routes = [
       }
 
         ]
+    },
+    {
+      path: "home",
+      component: HomeComponent
     },
 
     {

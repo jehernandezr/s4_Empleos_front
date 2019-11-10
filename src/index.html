@@ -6,12 +6,33 @@
     <title>s4_empleos-Front</title>
     <base href="/">
 
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
    
 </head>
 
-<body>
+<body style="overflow: hidden;">
+        <script>
+                function jumpTo(x) {
+                  var etop = 0;
+                  switch (x) {
+                    case 1:
+                      etop = 1000;
+                      break;
+                    case 2:
+                      etop = 1700;
+                      break;
+                    case 3:
+                      etop = 2500;
+                      break;
+                  }
+                  $("#container2").animate({
+                    scrollTop: etop
+                  }, 1000);
+                }
+              </script>
     <my-app><myapp>
 </body>
 

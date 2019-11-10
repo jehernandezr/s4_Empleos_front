@@ -31,6 +31,8 @@ import { OfertaModule } from "./oferta/oferta.module";
 
 import { ContratistaModule } from './contratista/contratista.module';
 import{CuentaDeCobroModule} from './cuenta-de-cobro/cuenta-de-cobro.module';
+import { HomeModule} from "./home/home.module";
+
 @NgModule({
 
     declarations: [
@@ -47,6 +49,7 @@ import{CuentaDeCobroModule} from './cuenta-de-cobro/cuenta-de-cobro.module';
         CuentaDeCobroModule,
         AppRoutingModule,
         OfertaModule,
+        HomeModule,
         ContratistaModule,
         HttpClientModule,
         BrowserAnimationsModule,
