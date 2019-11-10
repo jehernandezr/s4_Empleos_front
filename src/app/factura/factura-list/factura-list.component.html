@@ -1,5 +1,5 @@
 <button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModalLong">
-		Crear Califiacaion
+		Crear Factura
 	</button>
 
 <div class="container-fluid">
@@ -9,16 +9,16 @@
 			<thead class="thead-dark">
 				<tr>
 					<th>ID</th>
-					<th>Nota</th>
-					<th>Comentario</th>
+					<th>Date</th>
+					<th>Valor</th>
 			 
 				</tr>
 			</thead>
 			<tbody>
-				<tr *ngFor="let e of calificaciones">
+				<tr *ngFor="let e of facturas">
 					<td>{{e.id}}</td>		
-					<td> {{e.nota}}</td>
-					<td>{{e.comentario}}</td>
+                    <td> {{e.fecha}}</td>
+					<td>{{e.valor}}</td>
 							 	
 				</tr>
 			</tbody>
@@ -35,8 +35,9 @@
 							  </button>
 							</div>
 							<div class="modal-body">
-								<app-calificacion-create></app-calificacion-create>
+								<app-factura-create></app-factura-create>
 							</div>
+							
 						  </div>
 						</div>
 				</div>

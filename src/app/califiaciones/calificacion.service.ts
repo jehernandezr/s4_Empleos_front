@@ -5,11 +5,9 @@ import { CalificacionDetail } from './calificacionDetail';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { catchError, map, tap } from "rxjs/operators";
-/*
-const API_URL = '../../assets/';
-const calificaciones = 'calificaciones.json';
-*/
-const API_URL2 = "http://localhost:8080/s4_empleos-api/api/";
+
+
+const API_URL2 = environment.apiURL+"/";
 const calificaciones2 = 'calificaciones/';
 
 @Injectable({ providedIn: "root" })

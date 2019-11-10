@@ -10,13 +10,17 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
 import {NgxPermissionsModule} from 'ngx-permissions';
 import { ModalDialogModule } from 'ngx-modal-dialog';
+import {CommonModule} from '@angular/common';
+
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 
 import { TarjetadecreditoModule } from './tarjetadecredito/tarjetadecredito.module';
-import { CalificacionesModule } from './califiaciones/calificaciones.module'
+import { CalificacionesModule } from './califiaciones/calificaciones.module';
+import{  FacturaModule } from './factura/factura.module';
+
 
 
 import { OfertaModule } from "./oferta/oferta.module";
@@ -32,6 +36,7 @@ import{CuentaDeCobroModule} from './cuenta-de-cobro/cuenta-de-cobro.module';
     imports: [
         BrowserModule,
         CalificacionesModule,
+        FacturaModule,
         TarjetadecreditoModule,
         CuentaDeCobroModule,
         AppRoutingModule,
@@ -39,6 +44,7 @@ import{CuentaDeCobroModule} from './cuenta-de-cobro/cuenta-de-cobro.module';
         ContratistaModule,
         HttpClientModule,
         BrowserAnimationsModule,
+        CommonModule,
         ModalDialogModule.forRoot(),
         AuthModule,
         FormsModule,

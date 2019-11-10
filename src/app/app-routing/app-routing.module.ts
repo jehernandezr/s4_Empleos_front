@@ -18,6 +18,8 @@ import { TarjetadecreditoDetailComponent } from '../tarjetadecredito/tarjetadecr
 import{CuentaDeCobroListComponent} from '../cuenta-de-cobro/cuenta-de-cobro-list/cuenta-de-cobro-list.component';
 import{ CuentaDeCobroDetailComponent}from '../cuenta-de-cobro/cuenta-de-cobro-detail/cuenta-de-cobro-detail.component';
 
+import{FacturaListComponent} from '../factura/factura-list/factura-list.component';
+import{ FacturaDetailComponent}from '../factura/factura-detail/factura-detail.component';
 const routes: Routes = [
 {
 
@@ -86,6 +88,19 @@ const routes: Routes = [
         {
           path: ':id',
           component: ContratistaDetailComponent,
+         
+        }
+        ]
+      },
+      {
+        path: 'facturas',
+        children: [{
+          path: 'list',
+          component: FacturaListComponent
+        },
+        {
+          path: ':id',
+          component: FacturaDetailComponent,
          
         }
         ]
