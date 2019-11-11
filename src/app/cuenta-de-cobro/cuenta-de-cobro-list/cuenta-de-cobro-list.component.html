@@ -1,36 +1,17 @@
 
-<div class="container-fluid">
-    <div class="col-md-5">
-      <table class="table table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th>Nombre Cuenta de Cobro</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor ="let cuenta of cuentas">
-            <td>{{cuenta.nombre}}</td>
-            <td>{{cuenta.nombre}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
     <div class="container">
       <div class="card-columns" style="column-count: 3;padding-top:12px;">
-      <div *ngFor = "let estudiante of estudiantes" class="card d-flex" style="width: 22.5rem;align-items: center; justify-content: center;padding-top: 28px;padding-bottom: 28px;">
-        <img src="/images/user.png" class="card-img-top" alt="...">
+      <div *ngFor = "let cuenta of cuentas" class="card d-flex" style="width: 22.5rem;align-items: center; justify-content: center;padding-top: 28px;padding-bottom: 28px;">
+        <img src= "../../../assets/user.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{estudiante.nombre}}</h5>
-            <h6>Semestre: {{estudiante.semestre}}</h6>
-            <h6>Carrera: {{estudiante.carrera}}</h6>
-          <a (click)="onSelected(estudiante.id)" href="javascript:;" class="btn btn-primary align-items-center d-flex justify-content-center" style="width: 10rem;margin-top:12px;">Ver perfil</a>
+          <h5 class="card-title">{{cuenta.nombre}}</h5>
+            <h6>Valor: {{cuenta.valor}}</h6>
+          <a (click)="onSelected(cuenta.id)" href="javascript:;" class="btn btn-primary align-items-center d-flex justify-content-center" style="width: 10rem;margin-top:12px;">Ver Detalle</a>
         </div>
       </div>
       </div>
       </div>
       
       <div *ngIf="selectedDetail != undefined">
-        <app-estudiante-detail [estudianteDetail]="selectedDetail"></app-estudiante-detail>
+        <app-cuenta-de-cobro-detail [cuentaDeCobroDetail]="selectedDetail"></app-cuenta-de-cobro-detail>
       </div>
