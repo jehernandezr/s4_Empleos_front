@@ -14,11 +14,11 @@ const API_URL = environment.apiURL;
 /**
 * The service provider for everything related to books
 */
-@Injectable({ providedIn: "root" })
+@Injectable()
 export class CuentaDeCobroService {
 
     httpOptions = {
-        headers: new HttpHeaders({ "Content-Type": "application/json" })
+        headers: new HttpHeaders({ "Content-Type": "application/json"})
       };
 
     /**

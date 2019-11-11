@@ -5,14 +5,18 @@
         <div class="card-body">
           <h5 class="card-title"> Estuidiante : {{cuenta.nombreEstudiante}}</h5>
             <h6>Valor: {{cuenta.valor}}</h6>
-           <a (click)="onSelected(cuenta.id)" href="javascript:;" class="btn btn-primary align-items-center d-flex justify-content-center" 
+           <a   class="figure-caption"
+           routerLink="/cuentas/{{cuenta.id}}"
+           routerLinkActive="active" class="btn btn-primary align-items-center d-flex justify-content-center" 
            style="width: 10rem;margin-top:12px;">Ver Detalle</a>
   
           </div>
       </div>
       </div>
       </div>
+    <div class="col-sm-3">
+    <router-outlet name="detail"></router-outlet>
+  </div>
+
       
-      <div *ngIf="selectedDetail != undefined">
-        <app-cuenta-de-cobro-detail [cuentaDeCobroDetail]="selectedDetail"></app-cuenta-de-cobro-detail>
-      </div>
+    

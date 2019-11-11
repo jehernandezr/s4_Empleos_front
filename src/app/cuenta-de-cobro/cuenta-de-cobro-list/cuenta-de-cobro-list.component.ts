@@ -14,15 +14,11 @@ export class CuentaDeCobroListComponent implements OnInit {
 
  
 
-  selectedDetail: CuentaDeCobroDetail;
 
   constructor(private cuentaDeCobroService: CuentaDeCobroService) { }
 
-  getCuentaDeCobro(id:number): void {
-    this.cuentaDeCobroService.getCuentasDeCobroDetail(id).subscribe(cuenta => {
-      this.selectedDetail = cuenta;
-    });
-  }
+ 
+
   getCuentasDeCobro(): void {
     this.cuentaDeCobroService.getCuentasDeCobro().subscribe(cuentas => 
     {
@@ -36,8 +32,7 @@ export class CuentaDeCobroListComponent implements OnInit {
     this.getCuentasDeCobro();
   }
 
-  onSelected(id: number) {
-    this.getCuentaDeCobro(id);
-  }
 
+
+  
 }
