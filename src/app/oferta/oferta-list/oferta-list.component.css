@@ -1,12 +1,23 @@
+
+
 .card{
     margin-top: 10px;
     margin-bottom: 10px;
 }
 .blanco{
     color: white;
+    white-space: nowrap;
 }
 .orden{
+    margin-top: 10px;
     margin-bottom: 30px;
+    background-color: rgb(32, 32, 32);
+}
+
+
+#numof{
+    border-color: white;
+    height: 30%;
 }
 
 #scroll {
@@ -16,11 +27,31 @@
     
     }
 
-.card::-webkit-scrollbar{
-    width: 7px;
-    background: white;
-}
+    .container2{
+        
+        overflow-y:auto;
+       
+        
+        min-height: 10%;
+       
+        margin: 0;
+        padding: 0;
+        
+    }
+    
 
-.card::-webkit-scrollbar-thumb{
-    background: black;
+
+#btn-crear{
+    float: right;
+    margin:2%;
 }
+.gris{
+    color: rgb(185, 180, 180);
+}
+.imagen-peque{
+    width: 130px; 
+    height: 60px;
+    }
+
+   
+    
