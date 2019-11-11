@@ -4,5 +4,14 @@ p {
 
 
 .navbar{
-    background:#c2c509c0;
+    background: #ffffff;;
 } 
+
+a {
+    color: black;
+}
+
+@font-face {
+    font-family: caviardreamsbold;
+    src: url(./font/caviardreamsbold.ttf);
+}
