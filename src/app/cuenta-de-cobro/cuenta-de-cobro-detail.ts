@@ -1,5 +1,6 @@
 
 import { CuentaDeCobro } from './cuenta-de-cobro';
+import { Contratista } from '../contratista/contratista';
 
 /**
 * This class represents a book of the BookStore. 
@@ -8,9 +9,9 @@ import { CuentaDeCobro } from './cuenta-de-cobro';
 export class CuentaDeCobroDetail extends CuentaDeCobro {
    
     fecha: string;
-    titular: string;
-    nombreEstuidante:String;
+    contratisa: Contratista;
     concepto:String;
+    numeroCuentaDeCobro:number;
     
 
     

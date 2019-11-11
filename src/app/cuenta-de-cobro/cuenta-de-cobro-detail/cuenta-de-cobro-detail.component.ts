@@ -12,13 +12,38 @@ import { CuentaDeCobroDetail } from "../cuenta-de-cobro-detail";
 export class CuentaDeCobroDetailComponent implements OnInit {
 
  
-
-    
-    @Input() cuentaDeCobroDetail: CuentaDeCobroDetail;
-   
-    constructor() { }
-
+  
+    constructor(
+      private cuentadeCobroService: CuentaDeCobroService,
+      private route: ActivatedRoute
+    ) {}
+    @Input() cuenta_id: number;
+    cuenta2:CuentaDeCobroDetail;
+  
+  
+    loader: any;
+  
+    getCuentasDeCobroDetail(): void {
+      this.cuentadeCobroService.getCuentasDeCobroDetail(this.cuenta_id).subscribe(o => {
+        this.cuenta2 = o;
+      });
+    }
+  
+    onLoad(params) {
+      this.cuenta_id = parseInt(params['id']);
+      console.log(" en detail " + this.cuenta_id);
+      this.cuenta2 = new CuentaDeCobroDetail();
+      this.getCuentasDeCobroDetail();
+    }
+  
     ngOnInit() {
+      this.loader = this.route.params.subscribe((params: Params) =>
+        this.onLoad(params)
+      );
+    }
+  
+    ngOnDestroy() {
+      this.loader.unsubscribe();
     }
 }
 
