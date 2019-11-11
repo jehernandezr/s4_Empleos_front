@@ -1,20 +1,25 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient,HttpHeaders } from '@angular/common/http';
 
 import {CuentaDeCobro} from './cuenta-de-cobro';
 import {CuentaDeCobroDetail} from '../cuenta-de-cobro/cuenta-de-cobro-detail';
 import {environment} from '../../environments/environment';
-const API_URL = "http://localhost:8080/s4_empleos-api/api/";
-const cuentas = '/cuentas';
+
+const cuentas = '/cuentasDeCobro';
+const API_URL = environment.apiURL;
 
 
 
 /**
 * The service provider for everything related to books
 */
-@Injectable()
+@Injectable({ providedIn: "root" })
 export class CuentaDeCobroService {
+
+    httpOptions = {
+        headers: new HttpHeaders({ "Content-Type": "application/json" })
+      };
 
     /**
     * Constructor of the service
@@ -27,16 +32,16 @@ export class CuentaDeCobroService {
     * Returns the Observable object containing the list of books retrieved from the API
     * @returns The list of books in real time
     */
-    getCuentaDeCobro(): Observable<CuentaDeCobro[]> {
+    getCuentasDeCobro(): Observable<CuentaDeCobro[]> {
         return this.http.get<CuentaDeCobro[]>(API_URL + cuentas);
     }
 
     /**
-    * Creates a new book
-    * @param cuentaDeCobro The new book
-    * @returns The book with its new id if it was created, false if it wasn't
+    * Creates a new cuenta
+    * @param cuentaDeCobro The new cuenta
+    * @returns The cuenta with its new id if it was created, false if it wasn't
     */
-    createBook(cuentaDeCobro): Observable<CuentaDeCobroDetail> {
+    createCuentaDeCobro(cuentaDeCobro): Observable<CuentaDeCobroDetail> {
         return this.http.post<CuentaDeCobroDetail>(API_URL + cuentas, cuentaDeCobro);
     }
 
