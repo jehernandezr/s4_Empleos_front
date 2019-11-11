@@ -3,7 +3,8 @@
 <div class="container">
 
 		<br>
-		<h4>Cantidad de facturas efectivas:  {{getCantidadFacturas()}}</h4>
+		<h4>Cantidad de facturas efectivas:  {{getCantidadFacturas()}} ,  Cantidad de dinero ganado: {{getCantidadDinero()}}</h4>
+
 		<br>
 		<button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModalLong">
 				Crear Factura
@@ -14,7 +15,9 @@
 
 		<div class="col-12">
 				<div class="row">
-					<div *ngFor="let e of facturas" class="card" style="width: 18rem;">
+					<div class ="card-columns">
+					
+						<div *ngFor="let e of facturas" class="card">
 						<div class="card-body">
 							<h5 class="card-title">Id: {{e.id}}</h5>
 							<h5 class="card-title">Fecha de facturación: {{e.fecha}}</h5>
@@ -23,7 +26,8 @@
 				     		<a routerLink="/facturas/{{e.id}}" class="btn btn-primary"> Ver detalle</a>
 				
 						</div>
-					</div>
+						</div>
+				</div>
 	
 			</div>
 		</div>

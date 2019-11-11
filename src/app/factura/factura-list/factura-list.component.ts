@@ -28,4 +28,15 @@ export class FacturaListComponent implements OnInit {
     return this.facturas.length;
   }
 
+  getCantidadDinero(): number{
+    let cant =0;
+    for(let i=0; i<this.facturas.length;i=i+1)
+    {
+      cant = cant + (this.facturas[i].valor);
+    }
+
+    return cant;
+  }
+
+
 }
