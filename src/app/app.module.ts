@@ -37,9 +37,9 @@ import { HomeModule} from "./home/home.module";
 
     declarations: [
         AppComponent,
+        
         EstudianteListComponent,
         EstudianteDetailComponent,
-        
     ],
     imports: [
         BrowserModule,
