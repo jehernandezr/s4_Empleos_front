@@ -7,6 +7,8 @@ import { FacturaCreateComponent } from './factura-create/factura-create.componen
 import { BrowserModule } from '@angular/platform-browser';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxPermissionsModule} from 'ngx-permissions';
+import { AppRoutingModule} from '../app-routing/app-routing.module';
+
 
 
 import { FacturaService } from './factura.service';
@@ -16,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
+    AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
