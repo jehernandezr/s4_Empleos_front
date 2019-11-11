@@ -32,6 +32,14 @@ export class OfertaListComponent implements OnInit {
   getOfertas(): void {
         this.ofertaService.getOfertas().subscribe(ofertas => this.ofertas = ofertas);
     }
+    
+    getOfertasFiltradas(): void {
+
+      const inputElement: HTMLInputElement = document.getElementById('filtro') as HTMLInputElement;
+      const filtro:String = inputElement.value;
+      this.ofertaService.getOfertasPalabraClave(filtro).subscribe(ofertas => this.ofertas = ofertas);
+  }
+
 
    
 

@@ -31,6 +31,11 @@ export class OfertaService {
       console.log(ofertaId+" "+API_URL +ofertas+ ofertaId);
         return this.http.get<OfertaDetail>(API_URL + ofertas + ofertaId);
     }
+
+    getOfertasPalabraClave(filtro:String): Observable<Oferta[]> {
+      console.log(filtro+" "+API_URL +ofertas+ filtro);
+        return this.http.get<Oferta[]>(API_URL + ofertas + filtro);
+    }
     /**
     * Creates an author
     * @param author The new author
@@ -39,5 +44,9 @@ export class OfertaService {
    createOferta(oferta): Observable<Oferta> {
     return this.http.post<Oferta>(API_URL + ofertas, oferta, this.httpOptions).pipe(tap((oferta: Oferta) => console.log(`added oferta w/ ${oferta.nombre} id=${oferta.id}`)));
 }
+
+
+
+
 
 }
