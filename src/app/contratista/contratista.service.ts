@@ -20,7 +20,7 @@ export class ContratistaService {
        return this.http.get<Contratista[]>(API_URL + contratistas);
    }
 
-   getOfertaDetail(contratistaId): Observable<ContratistaDetail> {
+   getContratistaDetail(contratistaId): Observable<ContratistaDetail> {
      console.log(contratistaId+" "+API_URL +contratistas+contratistaId);
        return this.http.get<ContratistaDetail>(API_URL +contratistas + contratistaId);
    }
