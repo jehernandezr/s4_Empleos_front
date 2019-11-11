@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit, NgModule, Pipe, PipeTransform } from '@angular/core';
 import {OfertaService} from '../oferta.service';
 import { Oferta } from '../oferta';
 import { Router } from '@angular/router';
@@ -23,6 +23,14 @@ export class OfertaListComponent implements OnInit {
     
     
   }
+  onSelect(event){
+    if(event.value=="1"){
+     const ke: HTMLInputElement = document.getElementById('bussiness') as HTMLInputElement;
+    
+    }
+
+  }
+ 
 
   numOfertas():number{
     return this.ofertas.length;
@@ -39,6 +47,7 @@ export class OfertaListComponent implements OnInit {
       const filtro:String = inputElement.value;
       this.ofertaService.getOfertasPalabraClave(filtro).subscribe(ofertas => this.ofertas = ofertas);
   }
+  
 
 
    

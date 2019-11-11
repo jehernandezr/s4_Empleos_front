@@ -1,84 +1,104 @@
-<br>
-<div *ngIf="ofertaDetail.tipoOferta===1">
+<div class="container">
+	<br>
+	<div *ngIf="ofertaDetail.tipoOferta===1">
 		<div class="row">
-				<div class="col-12">
-						<div class=" card dos">
-							<div class="card-body">
-								<div class="row">
-									<div class="col-9">
+			<div class="col-12">
+				<div class=" card dos">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-9">
 
-											<h3 class="card-text">{{ofertaDetail.nombre}}</h3>
-									</div>
-									<div class="col-2">
-											<button type="button" id="btn-aplicar" class="btn btn-block btn-dark">Aplicar</button>
-										</div>
-										<div class="col-1">
-											</div>
-
-								</div>
-
-								
-								
+								<h3 class="card-title">{{ofertaDetail.nombre}}</h3>
 							</div>
+							<div class="col-2">
+								<button type="button" id="btn-aplicar" class="btn btn-block btn-dark">Aplicar</button>
+							</div>
+							<div class="col-1">
+							</div>
+
 						</div>
+
+						<div class="row">
+							<div class="col-12 gris">
+								<p class="card-text">{{ofertaDetail.categoria}}</p>
+							</div>
+
+						</div>
+						<div class="row">
+								<div class="col-12 gris">
+									<p class="card-text" >{{ofertaDetail.pagoPorHora}} (Por hora)  -  {{ofertaDetail.horasDeTrabajo}} Horas  -  Publicada: </p>
+								</div>
+	
+							</div>
+
 					</div>
+
+				</div>
+
+
+			</div>
+
+
 		</div>
-<div class="row">
-	
-	<div class="col-8">
-		<div class=" card uno ">
-			<div class="card-body">
+		<div class="row">
+
+			<div class="col-8">
+				<div class=" card uno ">
+					<div class="card-body">
+
+						<h4 class="card-text">Descripción</h4>
+						<ul>{{ofertaDetail.descripcion}}</ul>
+						<h4 class="card-text">Requisitos</h4>
+						<ul>{{ofertaDetail.requisitos}}</ul>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class=" card uno" style="width: 95%;">
+					<div class="card-header ">
+						<h5>Detalles de la oferta</h5>
+					</div>
+					<div class="card-body">
+
+						<h4 class="card-text"></h4>
+						<p class="card-text">{{ofertaDetail.nombre}}</p>
+						<h5 class="card-text">Empresa</h5>
+						<p class="card-text">das</p>
+						<h5 class="card-text">Horas de trabajo</h5>
+						<p class="card-text">{{ofertaDetail.horasDeTrabajo}}</p>
+						<h5 class="card-text">Pago por hora</h5>
+						<p class="card-text">{{ofertaDetail.pagoPorHora | currency}}</p>
+						<button type="button" class="btn btn-block btn-dark">Aplicar</button>
+
+
+
+					</div>
+
+				</div>
+				<div class=" card uno" style="width: 95%;">
+					<div class="card-header ">
+						<h5>Horario</h5>
+					</div>
+					<div class="card-body">
+
+						<h4 class="card-text"></h4>
+						<div *ngFor="let subcategory of ofertaDetail.horario|splitComma">
+
+							<h6 class="card-text">{{subcategory}}</h6>
+						</div>
+
+
+					</div>
+
+				</div>
 				
-				<h4 class="card-text">Descripción</h4>
-				<ul>{{ofertaDetail.descripcion}}</ul>
-				<h4 class="card-text">Requerimientos</h4>
-				<ul>{{ofertaDetail.descripcion}}</ul>
-
 			</div>
 		</div>
 	</div>
-	<div class="col-4">
-		<div class=" card uno" style="width: 95%;" >
-			<div class="card-header ">
-				<p>Detalles de la oferta</p>
-			</div>
-			<div class="card-body">
-
-				<h4 class="card-text"></h4>
-				<p class="card-text">{{ofertaDetail.nombre}}</p>
-				<h5 class="card-text">Empresa</h5>
-				<p class="card-text">das</p>
-				<h5 class="card-text">Horas de trabajo</h5>
-				<p class="card-text">{{ofertaDetail.horasDeTrabajo}}</p>
-				<h5 class="card-text">Pago por hora</h5>
-				<p class="card-text">{{ofertaDetail.pagoPorHora}}</p>
-				<button type="button"  class="btn btn-block btn-dark">Aplicar</button>
+	<h1></h1>
+	<br><br>
 
 
 
-			</div>
-
-		</div>
-		<div class=" card uno" style="width: 95%;">
-				<div class="card-header ">
-					<p>Horario</p>
-				</div>
-				<div class="card-body">
-	
-					<h4 class="card-text"></h4>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-	
-				</div>
-	
-			</div>
-	</div>
 </div>
-</div>
-<h1></h1>
-<br><br>
-<h3>Horas de Trabajo: {{ofertaDetail.horasDeTrabajo}}</h3>
-<h3>Pago por hora:   {{ofertaDetail.pagoPorHora | currency}}</h3>
-<h4>Horario: {{ofertaDetail.horario}}</h4>
-
-<h4> Requisitos{{ofertaDetail.requisitos}}</h4>
-
