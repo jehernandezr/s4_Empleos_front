@@ -5,10 +5,10 @@ import { ContratistaDetailComponent } from './contratista-detail/contratista-det
 import { ContratistaService } from './contratista.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
-    CommonModule, HttpClientModule, AppRoutingModule, FormsModule
+    CommonModule, HttpClientModule, AppRoutingModule, FormsModule,ReactiveFormsModule
   ],
   declarations: [ContratistaListComponent, ContratistaDetailComponent ],
   exports: [ContratistaListComponent,ContratistaDetailComponent],
