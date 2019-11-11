@@ -49,6 +49,13 @@ export class FacturaCreateComponent implements OnInit {
     console.log("Intentando crear factura");
     console.log(newFac);
     console.warn("el cliente fue creado", newFac);
+    var fecha = (<HTMLInputElement>document.getElementById("facturaDate")).value + "T00:00:00-00:00";
+    var valor = (<HTMLInputElement>document.getElementById("valor")).value;
+    console.log(fecha);
+    console.log(valor);
+    newFac = new Factura();
+    newFac.fecha = fecha;
+    newFac.valor = parseInt(valor);
 /*
     let dateB: Date = new Date(newFac.fecha.year, newFac.fecha.month - 1, newFac.fecha.day,newFac.fecha.hours,newFac.fecha.minutes,newFac.fecha.seconds);
 
