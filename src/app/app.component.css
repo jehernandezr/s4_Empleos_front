@@ -2,3 +2,16 @@ p {
   font-family: Lato;
 }
 
+
+.navbar{
+    background: #ffffff;;
+} 
+
+a {
+    color: black;
+}
+
+@font-face {
+    font-family: caviardreamsbold;
+    src: url(./font/caviardreamsbold.ttf);
+}

@@ -1,10 +1,11 @@
 
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
 import {ToastrService} from 'ngx-toastr';
 import { Factura } from '../factura';
 import { FacturaService }from '../factura.service';
 import {DatePipe} from '@angular/common';
+import { TouchSequence } from 'selenium-webdriver';
 
 
 @Component({
@@ -19,10 +20,20 @@ export class FacturaCreateComponent implements OnInit {
 
   clientForm: FormGroup;
 
-    /**
-    * The new factura
+   factura:Factura;
+
+   
+       /**
+    * The output which tells the parent component
+    * that the user no longer wants to create an author
     */
-   facturas: Factura[];
+   @Output() cancel = new EventEmitter();
+
+   /**
+   * The output which tells the parent component
+   * that the user created a new author
+   */
+   @Output() create = new EventEmitter();
 
 
     /**
@@ -38,49 +49,41 @@ export class FacturaCreateComponent implements OnInit {
         private toastr: ToastrService
       ) {
         this.clientForm = this.formBuilder.group({
-          fecha: [],
-          valor: []
+          fecha: [""],
+          valor: [""]
         });
       }
-      /**
-    * Creates an author
-    */
-   createFactura(newFac: Factura){
-    console.log("Intentando crear factura");
-    console.log(newFac);
-    console.warn("el cliente fue creado", newFac);
-    var fecha = (<HTMLInputElement>document.getElementById("facturaDate")).value + "T00:00:00-00:00";
-    var valor = (<HTMLInputElement>document.getElementById("valor")).value;
-    console.log(fecha);
-    console.log(valor);
-    newFac = new Factura();
-    newFac.fecha = fecha;
-    newFac.valor = parseInt(valor);
-/*
-    let dateB: Date = new Date(newFac.fecha.year, newFac.fecha.month - 1, newFac.fecha.day,newFac.fecha.hours,newFac.fecha.minutes,newFac.fecha.seconds);
-
-    newFac.fecha = this.dp.transform(dateB, 'yyyy-MM-ddThh:mm:ssTZD');
-  */  
-    console.warn("el cliente fue creado", newFac);
-    this.facturaService.createFactura(newFac).subscribe(client => {
-        this.facturas.push(client);
-        this.showSuccess();
-      });
-      this.clientForm.reset();
-    }
 
     
-  showSuccess() {
-    for (let i = 0; i < this.facturas.length; i++){
-      console.log(this.facturas[i].id+' '+this.facturas[i].fecha+' '+this.facturas[i].valor);
-    }
-    this.toastr.success("Factura", "Creado exitosamente!", {"progressBar": true,timeOut:4000});
-   
-  }
+  
+
+    createFactura2():Factura{
+      console.log("Intentando crear factura");
+      console.log(this.factura);
+      console.warn("el cliente fue creado", this.factura);
+      var fecha = (<HTMLInputElement>document.getElementById("facturaDate")).value + "T00:00:00-00:00";
+      var valor = (<HTMLInputElement>document.getElementById("valor")).value;
+      console.log(fecha);
+      console.log(valor);
+      
+      this.factura.fecha = fecha;
+      this.factura.valor = parseInt(valor);
+  
+      console.warn("el cliente fue creado", this.factura);
+      this.facturaService.createFactura(this.factura).subscribe(client => {
+          this.factura = client;
+          this.create.emit();
+          this.toastr.success("el cliente fue creado", "Factura creation");
+        });
+        this.clientForm.reset();  
+        return this.factura;
+
+      }
+
+
   ngOnInit() {
-    this.facturaService
-      .getFacturas()
-      .subscribe(clientes => (this.facturas = clientes));
+    this.factura=new Factura();
+    
   }
 
 }
