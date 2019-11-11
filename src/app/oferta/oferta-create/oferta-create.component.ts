@@ -27,11 +27,22 @@ export class OfertaCreateComponent implements OnInit {
       rutaImagen:[],
       tiempoMaximoAplicacion:[],
       tipoOferta:[],
-      contratista: this.formBuilder.array([]) ,
-      trabajo: this.formBuilder.array([]) ,
+      contratista:[] ,
+      trabajo: [] ,
       estudiantes: this.formBuilder.array([]) 
 
     });
+    if(this.clientForm.get('porcentajePagoAdicional').value===null){
+      this.clientForm.get('porcentajePagoAdicional').setValue(0);
+    }
+    if(this.clientForm.get('tiempoMaximoAplicacion').value===null){
+      this.clientForm.get('tiempoMaximoAplicacion').setValue(0);
+    }
+    
+    this.clientForm.get('estaAbierta').setValue(true);
+    this.clientForm.get('trabajo').setValue({});
+    this.clientForm.get('contratista').setValue({});
+    
   }
 
 
@@ -42,12 +53,16 @@ export class OfertaCreateComponent implements OnInit {
   createOferta(newClient: Oferta) {
     // Process checkout data here
     console.warn("la oferta fue creado", newClient);
+    
+    
 
     this.ofertaService.createOferta(newClient).subscribe(client => {
       this.ofertas.push(client);
       this.showSuccess();
     });
-    this.clientForm.reset();
+
+    
+    
   }
 
   showSuccess() {

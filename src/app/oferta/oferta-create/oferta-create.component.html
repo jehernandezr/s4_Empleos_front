@@ -45,11 +45,13 @@
 		<label for="descripcion">
       Descripcion requerida
     </label>
-		<input id="descripcion" type="text"
-     class="form-control"
-     formControlName="descripcion"
-     placeholder="Descripcion de la oferta">
+    <textarea rows="4" cols="50" id="descripcion" type="text"
+    class="form-control"
+    formControlName="descripcion"
+    placeholder="Descripcion de la oferta">
+        </textarea>
 
+		
 		
   </div>
 
@@ -103,17 +105,10 @@
 		
   </div>
 
-  <div class="form-group  mx-sm-3 mb-2">
-		<label for="porcentajePagoAdicional">
-      porcentaje
-    </label>
-		<input id="porcentajePagoAdicional" type="number" min="0" oninput="this.value = Math.abs(this.value)"
-     class="form-control"
-     formControlName="porcentajePagoAdicional"
-     placeholder="porcentajePagoAdicional de la oferta">
+ 
 
 		
-  </div>
+  
 
   <div class="form-group  mx-sm-3 mb-2">
 		<label for="requisitos">
@@ -138,32 +133,43 @@
 		
   </div>
 
-  <div class="form-group  mx-sm-3 mb-2">
-		<label for="tiempoMaximoAplicacion">
-      tiempoMaximoAplicacion
-    </label>
-		<input id="tiempoMaximoAplicacion" type="number" min="0" oninput="this.value = Math.abs(this.value)"
-     class="form-control"
-     formControlName="tiempoMaximoAplicacion"
-     placeholder="tiempoMaximoAplicacion de la oferta">
 
-		
-  </div>
 
   <div class="form-group  mx-sm-3 mb-2">
 		<label for="tipoOferta">
       tipoOferta
     </label>
-		<input id="tipoOferta" type="number" min="0" oninput="this.value = Math.abs(this.value)"
-     class="form-control"
-     formControlName="tipoOferta"
-     placeholder="tipoOferta de la oferta">
+    <select class="form-control" id="tipoOferta" formControlName="tipoOferta" type="number"  [(ngModel)]="tipoOfertaD" name="college_name" required>
+        <option value="1">Estandar</option>
+        <option value="2">Express</option>
+      </select>
+		
 
 		
   </div>
+
+  <div class="form-group  mx-sm-3 mb-2" *ngIf="tipoOfertaD === '2'">
+      <label for="tiempoMaximoAplicacion">
+        tiempoMaximoAplicacion
+      </label>
+      <input id="tiempoMaximoAplicacion" type="number" min="0" oninput="this.value = Math.abs(this.value)"
+       class="form-control"
+       formControlName="tiempoMaximoAplicacion"
+       placeholder="tiempoMaximoAplicacion de la oferta">
   
+      
+    </div>
+    <div class="form-group  mx-sm-3 mb-2" *ngIf="tipoOfertaD === '2'">
+        <label for="porcentajePagoAdicional">
+          porcentaje
+        </label>
+        <input id="porcentajePagoAdicional" type="number" min="0" oninput="this.value = Math.abs(this.value)"
+         class="form-control"
+         formControlName="porcentajePagoAdicional"
+         placeholder="porcentajePagoAdicional de la oferta">
   
-    <button class="button mx-sm-3 mb-2" type="submit">Create</button>
+    </div>
+    <button class="btn btn-primary" type="submit">Create</button>
     
 
 

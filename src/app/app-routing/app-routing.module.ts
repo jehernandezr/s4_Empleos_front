@@ -32,7 +32,7 @@ const routes: Routes = [
         path: "tarjetas",
         children: [
       {
-        path: "list",
+        path: ":palabra",
         component: TarjetadecreditolistComponent
       },
       {
