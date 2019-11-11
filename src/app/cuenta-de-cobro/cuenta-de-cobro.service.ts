@@ -5,15 +5,16 @@ import {HttpClient} from '@angular/common/http';
 import {CuentaDeCobro} from './cuenta-de-cobro';
 import {CuentaDeCobroDetail} from '../cuenta-de-cobro/cuenta-de-cobro-detail';
 import {environment} from '../../environments/environment';
-const API_URL = "http://localhost:8080/s4_empleos-api/api/";
-const cuentas = '/cuentas';
+
+const cuentas = '/cuentasDeCobro';
+const API_URL = environment.apiURL;
 
 
 
 /**
 * The service provider for everything related to books
 */
-@Injectable()
+@Injectable({ providedIn: "root" })
 export class CuentaDeCobroService {
 
     /**
