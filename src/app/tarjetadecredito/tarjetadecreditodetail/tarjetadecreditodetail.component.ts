@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { ActivatedRoute, Params } from "@angular/router";
 
-import { Tarjetas } from "../tarjetass";
 import { TarjetadecreditoService } from "../tarjetadecredito.service";
 import { TarjetadecreditoDetail } from "../tarjetadecreditodetail";
 

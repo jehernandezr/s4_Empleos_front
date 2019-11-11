@@ -1,0 +1,54 @@
+<form [formGroup]="clientForm" (ngSubmit)="!clientForm.invalid && createTarjeta(clientForm.value)">
+    
+        <div class="form-group  mx-sm-3 mb-2">
+                <label for="numero">
+               Numero de Tarjeta
+                </label>
+                <input id="numero" type="text"
+               class="form-control"
+               formControlName="numero"
+               placeholder="Los 16 numeros de la tarjeta de credito.">
+            </div>
+
+            <div class="form-group  mx-sm-3 mb-2">
+                  <label for="TipodeTarjeta">
+                  Tipo de Tarjeta
+                </label>
+
+                 <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                    </div>
+                    <select class="custom-select" formControlName="TipodeTarjeta" id="TipodeTarjeta">
+                      <option selected>Choose...</option>
+                      <option value="MasterCard">MASTERCARD</option>
+                      <option value="Visa">VISA</option>
+                      <option value="Maestro">MAESTRO</option>
+                      <option value="Visa Electron">VISA ELECTRON</option>
+                      
+                    </select>
+            </div>
+            </div>        
+            <div class="form-group  mx-sm-3 mb-2">
+                <label for="cvc">
+               CVC
+                </label>
+                <input id="cvc" type="text"
+               class="form-control"
+               formControlName="cvc"
+               placeholder="El cvc de la tarjeta de credito.">
+            </div>
+            
+                <div class="form-group  mx-sm-3 mb-2">
+                        <label for="fecha">
+                       Fecha
+                        </label>
+                        <input id="fecha" type="text"
+                       class="form-control"
+                       formControlName="fecha"
+                       placeholder="La fecha de la tarjeta de credito. Formato = MM/AA">
+                    </div>
+
+                    <button class="button mx-sm-3 mb-2" type="submit">Create</button>
+    
+    </form>
