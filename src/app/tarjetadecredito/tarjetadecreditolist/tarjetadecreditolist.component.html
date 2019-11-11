@@ -1,19 +1,43 @@
 <div class="container-fluid">
+        <div class="col-12">
+                <button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModalLong">
+                    Agregar Tarjeta
+                </button>
+        </div>
     <div class="col-md-2">
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Tipo tarjeta</th>
-                    <th>Cvc</th>
-                    <th>Numero</th>        
+                    <th>Numero</th>
+                    <th>Fecha</th>        
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let e of tarjetas">
-                    <td style ="cursor: pointer;"><a class = "figure-caption" [routerLink] ="['/tarjetas', { outlets: { 'detail': [e.id] } }]">{{e.nombre}}</a></td>
-                    <td>{{e.numero}}</td>
+                    <td style ="cursor: pointer;"><a class = "figure-caption" [routerLink] ="['/tarjetas', { outlets: { 'detail': [e.id] } }]">{{e.numero}}</a></td>
                     <td>{{e.cvc}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Agregar Tarjeta</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <app-tarjeta-create></app-tarjeta-create>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button  class="btn btn-primary" type="submit">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>

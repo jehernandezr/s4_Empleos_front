@@ -2,8 +2,10 @@ export class Tarjetas {
     id: number;
 
     nombre: string;
+
+    numero: string;
   
-    cvc: number;
+    cvc: string;
 
     image: string;
   }
