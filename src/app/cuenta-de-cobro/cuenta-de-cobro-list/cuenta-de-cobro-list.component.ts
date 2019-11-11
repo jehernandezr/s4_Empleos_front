@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import{CuentaDeCobro} from '../cuenta-de-cobro';
 import { CuentaDeCobroDetail } from '../cuenta-de-cobro-detail';
 import { CuentaDeCobroService } from '../cuenta-de-cobro.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-cuenta-de-cobro-list',
   templateUrl: './cuenta-de-cobro-list.component.html',
@@ -15,7 +16,7 @@ export class CuentaDeCobroListComponent implements OnInit {
  
 
 
-  constructor(private cuentaDeCobroService: CuentaDeCobroService) { }
+  constructor(private cuentaDeCobroService: CuentaDeCobroService, private router:Router) { }
 
  
 

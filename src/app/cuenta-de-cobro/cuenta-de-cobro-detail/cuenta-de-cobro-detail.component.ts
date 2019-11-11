@@ -11,13 +11,13 @@ import { CuentaDeCobroDetail } from "../cuenta-de-cobro-detail";
 })
 export class CuentaDeCobroDetailComponent implements OnInit {
 
-  @Input() cuenta_id: number;
+ 
   
     constructor(
       private cuentadeCobroService: CuentaDeCobroService,
       private route: ActivatedRoute
     ) {}
-  
+    @Input() cuenta_id: number;
     cuenta2:CuentaDeCobroDetail;
   
   
@@ -30,7 +30,8 @@ export class CuentaDeCobroDetailComponent implements OnInit {
     }
   
     onLoad(params) {
-      this.cuenta_id = parseInt(params["id"]);
+      this.cuenta_id = parseInt(params['id']);
+      console.log(" en detail " + this.cuenta_id);
       this.cuenta2 = new CuentaDeCobroDetail();
       this.getCuentasDeCobroDetail();
     }
