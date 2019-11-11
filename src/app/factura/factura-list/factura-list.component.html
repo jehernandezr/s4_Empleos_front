@@ -1,57 +1,54 @@
-<br>
-<br>
-<div class="container-fluid">
-<div class="row">
+<div id="container2" class="container2">
 
-	
+<div class="container">
 
-		<div class ="col-7">
-			<table class="table table-striped">
-				<thead class="thead-dark">
-					<tr>
-					<th>ID</th>
-					<th>Date</th>
-					<th>Valor</th>
-			 
-				</tr>
-			</thead>
-				<tbody>
-					<tr *ngFor="let e of facturas">
-						<td>{{e.id}}</td>		
-                    	<td> {{e.fecha}}</td>
-						<td>{{e.valor}}</td>
-							 	
-					</tr>
-				</tbody>
-			</table>
+		<br>
+		<h4>Cantidad de facturas efectivas:  {{getCantidadFacturas()}}</h4>
+		<br>
+		<button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModalLong">
+				Crear Factura
+		</button>
+		<br><br>
+		<div class="row justify-content-md-center">
+		
 
-		</div>
-
-		<div class="col-sm">
-					<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-						<div class="modal-dialog" role="document">
-						  <div class="modal-content">
-								<div class="modal-header">
-							  		<h5 class="modal-title" id="exampleModalLongTitle">Crear factura</h5>
-							  		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-							  		</button>
-								</div>
-							
-								<div class="modal-body">
-									<app-factura-create></app-factura-create>
-								</div>
-							</div>
+		<div class="col-12">
+				<div class="row">
+					<div *ngFor="let e of facturas" class="card" style="width: 18rem;">
+						<div class="card-body">
+							<h5 class="card-title">Id: {{e.id}}</h5>
+							<h5 class="card-title">Fecha de facturación: {{e.fecha}}</h5>
+							<h5 class="card-title">Valor de la factura: {{e.valor}}</h5>
+							<br>
+				     		<a routerLink="/facturas/{{e.id}}" class="btn btn-primary"> Ver detalle</a>
+				
 						</div>
-				    </div>
+					</div>
+	
+			</div>
 		</div>
 
-		<div class ="col-sm">
-				<br>
-						<button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModalLong">
-							Crear Factura
-						</button>
-				</div>
+		</div> 
+</div>
 
-	</div> 
+</div>
+
+
+<div class="col">
+		<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+			  <div class="modal-content">
+					<div class="modal-header">
+						  <h5 class="modal-title" id="exampleModalLongTitle">Crear factura</h5>
+						  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						  </button>
+					</div>
+				
+					<div class="modal-body">
+						<app-factura-create></app-factura-create>
+					</div>
+				</div>
+			</div>
+		</div>
 </div>

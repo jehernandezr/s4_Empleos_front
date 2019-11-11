@@ -23,18 +23,9 @@ export class FacturaListComponent implements OnInit {
   }
 
 
-  getFechasPorMes(): Date[]{
-    let fechas:Date[]=[];
-    for(let i = 0; i<this.facturas.length;i=i+1)
-    {
-      console.log(this.facturas[i].fecha)
-      let fecha2: any = (this.facturas[i].fecha);
+  getCantidadFacturas(): number{
     
-      fechas[i]=fecha2;
-
-    }
-
-    return fechas;
+    return this.facturas.length;
   }
 
 }
