@@ -6,7 +6,7 @@ import {CuentaDeCobro} from './cuenta-de-cobro';
 import {CuentaDeCobroDetail} from '../cuenta-de-cobro/cuenta-de-cobro-detail';
 import {environment} from '../../environments/environment';
 
-const cuentas = '/cuentasDeCobro';
+const cuentas = '/cuentasDeCobro/';
 const API_URL = environment.apiURL;
 
 
@@ -14,11 +14,11 @@ const API_URL = environment.apiURL;
 /**
 * The service provider for everything related to books
 */
-@Injectable({ providedIn: "root" })
+@Injectable()
 export class CuentaDeCobroService {
 
     httpOptions = {
-        headers: new HttpHeaders({ "Content-Type": "application/json" })
+        headers: new HttpHeaders({ "Content-Type": "application/json"})
       };
 
     /**
@@ -50,7 +50,7 @@ export class CuentaDeCobroService {
     * @returns The author details
     */
     getCuentasDeCobroDetail(cuentaDeCobroId): Observable<CuentaDeCobroDetail> {
-        return this.http.get<CuentaDeCobroDetail>(API_URL + cuentas + '/' + cuentaDeCobroId);
+        return this.http.get<CuentaDeCobroDetail>(API_URL + cuentas + cuentaDeCobroId);
     }
 
    
@@ -61,7 +61,7 @@ export class CuentaDeCobroService {
         * @returns The updated book
         */
     updateCuentaDeCobro(cuentaDeCobro): Observable<CuentaDeCobroDetail> {
-        return this.http.put<CuentaDeCobroDetail>(API_URL +cuentas + '/' + cuentaDeCobro.id, cuentaDeCobro);
+        return this.http.put<CuentaDeCobroDetail>(API_URL +cuentas + cuentaDeCobro.id, cuentaDeCobro);
     }
     
     /**
@@ -70,7 +70,7 @@ export class CuentaDeCobroService {
     * @returns True if the book was deleted, false otherwise
     */
     deleteCuentaDeCobro(cuentaId): Observable<CuentaDeCobroDetail> {
-        return this.http.delete<CuentaDeCobroDetail>(API_URL + cuentas + '/' + cuentaId);
+        return this.http.delete<CuentaDeCobroDetail>(API_URL + cuentas  + cuentaId);
     }
 
 
