@@ -43,35 +43,6 @@ const routes: Routes = [
 
     ]
 },
-
-    {
-        path: 'estudiantes',
-        children:[
-            {
-                path:'list',
-                component: EstudianteListComponent
-            },
-            /*{
-                path:':id',
-                component: EstudianteDetailComponent,
-                outlet: 'detail'
-            }*/
-        ]
-    },
-    {
-        path: 'calificaciones',
-        children:[
-            {
-                path:'list',
-                component: CalificacionesListComponent
-            },
-            /*{
-                path:':id',
-                component:CalificaionDetailComponent,
-                outlet: 'detail'
-            }*/
-        ]
-    },
     {
       path: "home",
       component: HomeComponent
