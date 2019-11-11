@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { TarjetadecreditoService } from '../tarjetadecredito.service';
 import { Tarjetas } from '../tarjetass';
 import { ToastrService } from 'ngx-toastr';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -14,13 +14,22 @@ export class TarjetadecreditoCreateComponent implements OnInit {
     
     
     
-    constructor( private tarjetasService:TarjetadecreditoService, private toastr: ToastrService, private formBuilder: FormBuilder,) 
+    constructor( private tarjetasService:TarjetadecreditoService, 
+      private toastr: ToastrService, 
+      private formBuilder: FormBuilder,) 
   {
     this.clientForm = this.formBuilder.group({
       cvc: [],
       fecha:[],
       numero:[],
     });
+
+    this.clientForm = new FormGroup({
+      TipodeTarjeta: new FormControl(),
+      numero:new FormControl(),
+      cvc: new FormControl(),
+      fecha: new FormControl()
+   });
   }
 
     clientForm: FormGroup;
