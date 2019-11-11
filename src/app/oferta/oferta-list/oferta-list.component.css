@@ -22,8 +22,9 @@
 
 #scroll {
     overflow-y: scroll;
-    white-space: nowrap;
-    max-height: 40%;
+    
+    
+    height: 40%;
     
     }
 
@@ -32,7 +33,7 @@
         overflow-y:auto;
        
         
-        min-height: 10%;
+        min-height: 100%;
        
         margin: 0;
         padding: 0;

@@ -27,8 +27,8 @@ export class OfertaCreateComponent implements OnInit {
       rutaImagen:[],
       tiempoMaximoAplicacion:[],
       tipoOferta:[],
-      contratista: this.formBuilder.array([]) ,
-      trabajo: this.formBuilder.array([]) ,
+      contratista:[] ,
+      trabajo: [] ,
       estudiantes: this.formBuilder.array([]) 
 
     });
@@ -40,6 +40,8 @@ export class OfertaCreateComponent implements OnInit {
     }
     
     this.clientForm.get('estaAbierta').setValue(true);
+    this.clientForm.get('trabajo').setValue({});
+    this.clientForm.get('contratista').setValue({});
     
   }
 
