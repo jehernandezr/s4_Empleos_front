@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Estudiante } from "./estudiante";
 import { EstudianteDetail } from "./estudiante.detail";
@@ -14,6 +14,10 @@ const API = "http://localhost:8080/s4_empleos-api/api/estudiantes/"
 @Injectable()
 export class EstudianteService {
 
+  httpOptions = {
+    headers: new HttpHeaders({ "Content-Type": "application/json" })
+  };
+
   constructor(private http: HttpClient) { }
 
   getEstudiantes(): Observable<Estudiante[]> {
@@ -23,6 +27,10 @@ export class EstudianteService {
 
   getEstudiante(id: number): Observable<EstudianteDetail> {
     return this.http.get<EstudianteDetail>(API_URL + estudiante + id + ".json");
+  }
+
+  createEstudiante(estudiante: Estudiante): Observable<Estudiante> {
+    return this.http.post<Estudiante>(API, estudiante, this.httpOptions);
   }
 
 }

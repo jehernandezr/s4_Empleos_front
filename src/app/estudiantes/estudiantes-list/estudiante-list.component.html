@@ -28,12 +28,12 @@
 
 </div>
 
-<div class="col" >
+<div class="col">
 	<div class="modal fade" id="modalCreateEstudiante" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-body">
-            		<app-estudiante-create></app-estudiante-create>
+            		<app-estudiante-create (create)="receiveMessage($event)"></app-estudiante-create>
 				</div>
 			</div>
 		</div>
