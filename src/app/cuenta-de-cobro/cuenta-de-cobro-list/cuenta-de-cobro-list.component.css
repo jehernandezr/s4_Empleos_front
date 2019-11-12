@@ -8,6 +8,8 @@ img.pequeña{
 img.mediana{
     width: 100px; height: 100px;
   }
+
+  
   img.grande{
     width: 200px; height: 200px;
   }
@@ -18,4 +20,16 @@ div.cuadro{
     justify-content: center;
     padding-top: 28px;
     padding-bottom: 28px;
+}
+
+img {
+  width: 200px;
+}
+
+.btn .btn-outline-warning .align-items-center .d-flex .justify-content-center .estudiante:hover {
+  color: white;
+}
+
+#but:hover {
+  color: white !important;
 }

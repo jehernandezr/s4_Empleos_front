@@ -38,7 +38,7 @@ const routes: Routes = [
       {
         path: ":id",
         component: TarjetadecreditoDetailComponent,
-        outlet: "detail"
+        //outlet: "detail"
       }
 
     ]
@@ -52,11 +52,11 @@ const routes: Routes = [
       path:"cuentas",
       children:[
         {
-          path:"list",
+          path:':list',
           component: CuentaDeCobroListComponent
         },
         {
-          path :"id",
+          path :':id',
           component: CuentaDeCobroDetailComponent,
           outlet: "detail"
         }

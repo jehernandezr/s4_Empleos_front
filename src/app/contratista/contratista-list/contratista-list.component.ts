@@ -14,6 +14,7 @@ export class ContratistaListComponent implements OnInit {
   constructor(private contratistaService: ContratistaService, private router:Router) { }
   contratistas: Contratista[];
   selectedOferta: ContratistaDetail;
+ 
   ngOnInit() {
     this.getContratista();
     

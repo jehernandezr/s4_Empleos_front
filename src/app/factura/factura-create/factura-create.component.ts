@@ -1,11 +1,10 @@
 
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
+import { FormBuilder, FormGroup} from "@angular/forms";
 import {ToastrService} from 'ngx-toastr';
 import { Factura } from '../factura';
 import { FacturaService }from '../factura.service';
 import {DatePipe} from '@angular/common';
-import { TouchSequence } from 'selenium-webdriver';
 
 
 @Component({

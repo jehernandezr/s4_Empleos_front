@@ -1,6 +1,6 @@
-import {Component, OnInit, OnDestroy, ViewChild, ViewContainerRef,Input} from '@angular/core';
+import {Component, OnInit, ViewContainerRef,Input} from '@angular/core';
 import {ActivatedRoute, Router, NavigationEnd,Params} from '@angular/router';
-import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
+import {ModalDialogService} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
 
 
