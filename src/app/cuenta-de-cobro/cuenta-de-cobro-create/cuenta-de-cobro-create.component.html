@@ -1,0 +1,39 @@
+<form [formGroup]="clientForm" (ngSubmit)="!clientForm.invalid && createCuentaDeCobro(clientForm.value)">
+    
+        <div class="form-group  mx-sm-3 mb-2">
+                <label for="valor">
+               Valor de la cuenta
+                </label>
+                <input id="valor" type="text"
+               class="form-control"
+               formControlName="valor"
+               placeholder="El valor a cobrar.">
+            </div>     
+            <div class="form-group  mx-sm-3 mb-2">
+                <label for="nombreEstudiante">
+               Nombre Estudiante
+                </label>
+                <input id="nombreEstudiante" type="text"
+               class="form-control"
+               formControlName="nombreEstudiante"
+               placeholder="El nombre del estudiante asociado a la cuenta">
+            </div>
+            
+                <div class="form-group  mx-sm-3 mb-2">
+                        <label for="fecha">
+                       Fecha
+                        </label>
+                        <input id="fecha" type="text"
+                       class="form-control"
+                       formControlName="fecha"
+                       placeholder="La fecha de la cuenta de cobro. Formato = DD/MM/AA">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button  class="btn btn-primary" type="submit">Crear Factura</button>
+    
+                      </div>
+    
+    
+    </form>
