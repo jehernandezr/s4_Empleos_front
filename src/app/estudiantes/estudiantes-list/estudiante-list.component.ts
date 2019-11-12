@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { EstudianteService } from "../estudiante.service";
 import { Estudiante } from "../estudiante";
 import { EstudianteDetail } from "../estudiante.detail";
+import { EstudianteCreateComponent } from '../estudiante-create/estudiante-create.component';
 
 @Component({
   selector: 'app-estudiante-list',
@@ -12,13 +13,23 @@ export class EstudianteListComponent implements OnInit {
 
   estudiantes: Estudiante[];
 
+  estudiante: Estudiante;
+
   modalOn: boolean;
 
   selectedDetail: EstudianteDetail;
 
   clickCreate() {
-    console.log("entrè");
     this.modalOn = true;
+  }
+
+  activateModal() {
+    this.modalOn = true;
+  }
+
+  receiveMessage($event) {
+    this.estudiantes.push($event);
+    this.modalOn = false;
   }
 
   constructor(private estudianteService: EstudianteService) {
