@@ -37,7 +37,6 @@ export class CuentaDeCobroDetailComponent implements OnInit {
 
     cuenta2:CuentaDeCobroDetail;
   
-  
     loader: any;
 
     otras_cuentas: CuentaDeCobro[];
