@@ -25,6 +25,7 @@ import{  FacturaModule } from './factura/factura.module';
 import { EstudianteModule } from "./estudiantes/estudiante.module";
 import { EstudianteListComponent } from "./estudiantes/estudiantes-list/estudiante-list.component";
 import { EstudianteDetailComponent } from "./estudiantes/estudiantes-detail/estudiante-detail.component";
+import { EstudianteCreateComponent } from "./estudiantes/estudiante-create/estudiante-create.component";
 import { EstudianteService } from "./estudiantes/estudiante.service";
 
 import { OfertaModule } from "./oferta/oferta.module";
@@ -40,6 +41,7 @@ import { HomeModule} from "./home/home.module";
         
         EstudianteListComponent,
         EstudianteDetailComponent,
+        EstudianteCreateComponent
     ],
     imports: [
         BrowserModule,

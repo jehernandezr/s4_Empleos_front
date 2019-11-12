@@ -1,5 +1,5 @@
 <div style="padding:20px;background-color:#353436;display:flex;flex-direction: row;justify-content: center;">
-  <a class="btn btn-warning" style="border-color:#FFC14F;color:white;background-color:#FFB13F!important;">Crear estudiante</a>
+  <a data-toggle="modal" data-target="#modalCreateEstudiante" class="btn btn-warning" style="cursor:pointer;border-color:#FFC14F;color:white;background-color:#FFB13F!important;">Crear estudiante</a>
 </div>
 
 <div style="background-color:#353436;padding:45px;padding-top:0px;display:flex;flex-direction:row;justify-content:center;width:100%;overflow-y:scroll;height:800px;overflow-x:hidden;">
@@ -26,4 +26,16 @@
   </div>
 
 
+</div>
+
+<div class="col" >
+	<div class="modal fade" id="modalCreateEstudiante" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+            		<app-estudiante-create></app-estudiante-create>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

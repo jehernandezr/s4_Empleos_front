@@ -12,9 +12,18 @@ export class EstudianteListComponent implements OnInit {
 
   estudiantes: Estudiante[];
 
+  modalOn: boolean;
+
   selectedDetail: EstudianteDetail;
 
-  constructor(private estudianteService: EstudianteService) { }
+  clickCreate() {
+    console.log("entrè");
+    this.modalOn = true;
+  }
+
+  constructor(private estudianteService: EstudianteService) {
+    this.modalOn = false;
+  }
 
   getEstudiante(id:number): void {
     /*this.estudianteService.getEstudiante(id).subscribe(estudiante => {

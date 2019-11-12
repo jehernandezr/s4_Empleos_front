@@ -56,8 +56,9 @@ const routes: Routes = [
           component: CuentaDeCobroListComponent
         },
         {
-          path :':id',
+          path:':id',
           component: CuentaDeCobroDetailComponent,
+          outlet: 'detail'
         }
 
       ]
