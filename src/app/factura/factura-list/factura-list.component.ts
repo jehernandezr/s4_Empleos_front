@@ -30,7 +30,7 @@ export class FacturaListComponent implements OnInit {
 
   getCantidadDinero(): number{
     let cant =0;
-    for(let i=0; i<this.facturas.length;i=i+1)
+    for(let i=0; i < this.facturas.length; i=i+1)
     {
       cant = cant + (this.facturas[i].valor);
     }

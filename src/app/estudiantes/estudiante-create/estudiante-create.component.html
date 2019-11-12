@@ -1,0 +1,21 @@
+<div style="padding:60px;">
+    <div style="display:flex;flex-direction: row;justify-content: center;">
+        <h4 style="color:black;">Crear estudiante</h4>
+    </div>
+    <form style="margin-top:20px;">
+        <div style="display:flex;flex-direction: row;justify-content: center;">
+            <input id="nombre" class="dataField" type="text" placeholder="Nombre">
+            <input id="semestre" class="dataField" type="number" placeholder="Semestre">
+        </div>
+        <div style="display:flex;flex-direction: row;justify-content: center;">
+            <input id="horarioDeTrabajo" class="dataField" type="text" placeholder="Horario de trabajo">
+            <input id="carrera" class="dataField" type="text" placeholder="Carrera">
+        </div>
+        <div style="display:flex;flex-direction: row;justify-content: center;">
+            <input id="correo" class="dataField" style="width:300px;" type="text" placeholder="Correo">
+        </div>
+        <div style="display:flex;flex-direction: row;justify-content: center;">
+            <a (click)="createEstudiante()" class="btn btn-warning" style="border-radius:30px;margin-top:20px;width:200px;cursor:pointer;border-color:#FFC14F;color:white;background-color:#FFB13F!important;">Crear</a>
+        </div>
+    </form>
+</div>

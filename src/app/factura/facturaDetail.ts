@@ -5,4 +5,5 @@ export class FacturaDetail extends Factura {
 
     comentario: string;
 
+
 }
