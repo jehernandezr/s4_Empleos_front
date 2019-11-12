@@ -8,12 +8,13 @@ import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OfertaCreateComponent } from './oferta-create/oferta-create.component';
 import { SplitPipe } from './split.pipe';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   imports: [
     CommonModule, HttpClientModule, AppRoutingModule, FormsModule,ReactiveFormsModule
   ],
-  declarations: [OfertaListComponent, OfertaDetailComponent, OfertaCreateComponent, SplitPipe ],
+  declarations: [OfertaListComponent, OfertaDetailComponent, OfertaCreateComponent, SplitPipe, FilterPipe ],
   exports: [OfertaListComponent, OfertaDetailComponent],
   providers: [OfertaService]
 

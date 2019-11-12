@@ -43,7 +43,18 @@
     
     }
 
- 
+    .container2{
+        
+        overflow-y:auto;
+       
+        
+        min-height: 100%;
+       
+        margin: 0;
+        padding: 0;
+        
+    }
+    
 
 
 #btn-crear{

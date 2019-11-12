@@ -40,6 +40,28 @@ export class OfertaListComponent implements OnInit {
   getOfertas(): void {
         this.ofertaService.getOfertas().subscribe(ofertas => this.ofertas = ofertas);
     }
+
+    carUnicas():string[]{
+      var array:string[]= new Array();
+      for(let o of this.ofertas){
+        array.push(o.categoria);
+      }
+        var result : string[] = Array.from(new Set(array));
+        return result    
+      
+
+    }
+
+    contarCat(cat:String):number{
+    let contador:number =0;
+     for(let e of this.ofertas){
+       if(cat==e.categoria){
+         contador++;
+       }
+     }
+
+     return contador;
+    }
     
     getOfertasFiltradas(): void {
 

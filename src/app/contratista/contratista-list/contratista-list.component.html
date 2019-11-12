@@ -1,3 +1,24 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <app-contratista-create></app-contratista-create>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
 <div id="container2" class="container2">
 
     <div class="container overflow-auto">
@@ -19,7 +40,7 @@
                         <div class="card-body">
                             <div class="input-group mb-3">
     
-                                <input type="text" id="filtro" class="form-control" placeholder="Username" aria-label="Username"
+                                <input type="text" id="filtro" class="form-control" placeholder="Sector" aria-label="Username"
                                 aria-describedby="basic-addon1"><br><br>
                                 <button type="button" class="btn btn-block btn-dark"
                                 (click)="getOfertasFiltradas()">Buscar</button>
@@ -43,10 +64,17 @@
                         <div class="col-1"><a class="nav-link blanco" href="#">Pago promedio</a></div>
                         <div class="col-3"></div>
                         <div class="col-4">
-                                <button type="button" style="white-space: nowrap" class="btn btn-primary btn-md btn-block" id="btn-crear" data-toggle="modal"
+                            
+                              <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+   Crear Contratista
+  </button>
+  
+  
+                                <!---button type="button" style="white-space: nowrap" class="btn btn-primary btn-md btn-block" id="btn-crear" data-toggle="modal"
                                 data-target="#exampleModalLong">
                                 Crear Contratista
-                            </button>
+                            </button-->
                         </div>
                    
                     
@@ -57,57 +85,48 @@
     
                         <div class="card-body">
                             <div class="row">
-                            <div class="col-9"><h4 class="card-text"><a class="nav-link " routerLink="/ofertas/{{e.id}}"
+                            <div class="col-9"><h4 class="card-text"><a class="nav-link " routerLink="/contratistas/{{e.id}}"
                                 routerLinkActive="active">{{e.nombre}}</a></h4></div>
                             <div class="col-3 hidden-xs">
                                 <img class="imagen-peque" src="{{e.rutaImagen}}">
     
                             </div>
                         </div>
-                            <p class="card-text"><a  routerLink="/ofertas/{{e.id}}"
-                                routerLinkActive="active">... Ver mas </a></p>
+                            
     
                         </div>
     
     
     
                     </div>
-                    <div class="card  border-danger" *ngIf="e.tipoOferta===2">
-                        <div class="card-header bg-danger blanco">Oferta Express</div>
-                        <div class="card-body">
-                            <h4 class="card-text"><a class="nav-link " routerLink="/ofertas/{{e.id}}"
-                                    routerLinkActive="active">{{e.nombre}}</a></h4>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    
-                        </div>
-    
-    
-    
-                    </div>
+                    
                 </div>
             </div>
         </div>
+        <div class="col-sm">
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  
+                </div>
+                </div>
+              </div>
+          </div>
+          <div  calss="col-sm">
+            
+  
+          </div>
+  
+        </div> 
+  
       </div>
-        
-        <!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
+      
   </div>
-    
-    
+  
