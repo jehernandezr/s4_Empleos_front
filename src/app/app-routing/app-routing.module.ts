@@ -52,11 +52,11 @@ const routes: Routes = [
       path:"cuentas",
       children:[
         {
-          path:"list",
+          path:':list',
           component: CuentaDeCobroListComponent
         },
         {
-          path :"id",
+          path :':id',
           component: CuentaDeCobroDetailComponent,
           outlet: "detail"
         }

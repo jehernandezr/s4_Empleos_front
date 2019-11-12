@@ -18,8 +18,6 @@ export class CuentaDeCobroListComponent implements OnInit {
 
   constructor(private cuentaDeCobroService: CuentaDeCobroService, private router:Router) { }
 
- 
-
   getCuentasDeCobro(): void {
     this.cuentaDeCobroService.getCuentasDeCobro().subscribe(cuentas => 
     {

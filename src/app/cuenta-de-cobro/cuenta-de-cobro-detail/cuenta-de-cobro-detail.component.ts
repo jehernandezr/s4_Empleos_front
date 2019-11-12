@@ -20,7 +20,6 @@ export class CuentaDeCobroDetailComponent implements OnInit {
     @Input() cuenta_id: number;
     cuenta2:CuentaDeCobroDetail;
   
-  
     loader: any;
   
     getCuentasDeCobroDetail(): void {
