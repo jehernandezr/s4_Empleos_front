@@ -38,7 +38,7 @@ const routes: Routes = [
       {
         path: ":id",
         component: TarjetadecreditoDetailComponent,
-        //outlet: "detail"
+        outlet: "detail"
       }
 
     ]
