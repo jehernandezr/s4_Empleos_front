@@ -34,6 +34,7 @@ export class EstudianteListComponent implements OnInit {
 
   constructor(private estudianteService: EstudianteService) {
     this.modalOn = false;
+    this.estudiantes = new Array();
   }
 
   getEstudiante(id:number): void {
