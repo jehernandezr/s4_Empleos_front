@@ -5,14 +5,9 @@
         <div class="card-body">
           <h5 class="card-title"> Estuidiante : {{cuenta.nombreEstudiante}}</h5>
             <h6>Valor: {{cuenta.valor}}</h6>
-<<<<<<< HEAD
            <a   style="cursor: pointer;" class="figure-caption"
             [routerLink]="['/cuentas', { outlets: { 'detail': [cuenta.id] } }]"
             class="btn btn-primary align-items-center d-flex justify-content-center" 
-=======
-           <a   class="figure-caption"
-           routerLink="/cuentas/{{cuenta.id}}" class="btn btn-primary align-items-center d-flex justify-content-center" 
->>>>>>> 8dba8291053a4fc24a576ace52f9d26a3679a4ce
            style="width: 10rem;margin-top:12px;">Ver Detalle</a>
            
           
@@ -21,15 +16,9 @@
       </div>
       </div>
       </div>
-<<<<<<< HEAD
       <div class="col-sm-3">
         <router-outlet name="detail"></router-outlet>
       </div>
      
-=======
-    <div class="col-sm-3">
-   </div>
-
->>>>>>> 8dba8291053a4fc24a576ace52f9d26a3679a4ce
       
     
