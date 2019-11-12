@@ -2,22 +2,25 @@
     <button class="btn btn-warning" style="border-color:#FFC14F;color:white;background-color:#FFB13F!important;">Crear Cuenta De Cobro</button>
   </div>
 
-  <div style="background-color:#353436;padding:45px;padding-top:0px;display:flex;flex-direction:row;justify-content:center;width:100%;overflow-y:scroll;height:800px;overflow-x:hidden;">
-      <div class="card-deck" style="margin-top:-20px;padding:5px;margin-bottom:20px;">
-          <div *ngFor = "let cuenta of cuentas" >
-            
-              <div class="card d-flex" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);margin-top:25px;width: 22.5rem;align-items: center; justify-content: center;padding-top: 28px;padding-bottom: 28px; border-radius:1rem;">
-                  <img src= "../../../assets/imgdoc.png" class="card-img-top" class="mediana" alt="Documento cuenta de cobro" >
-                <div class="card-body">
-                  <h5 class="card-title" style="margin-top:15px;"> Estuidiante : {{cuenta.nombreEstudiante}}</h5>
-                  <h6>Valor: {{cuenta.valor}}</h6>
-                  <a class="figure-caption" routerLink="/cuentas/{{cuenta.id}}" class="btn btn-primary align-items-center d-flex justify-content-center" style="width: 10rem;margin-top:12px;">Ver Detalle</a>
-                </div>
-              </div>
-          </div>
-      </div>
-      <div class="col-sm-3"></div>
-</div>
+  <div class="container">
+    <div class="card-deck" style="column-count: 3; padding-top:12px;">
+    <div *ngFor = "let cuenta of cuentas" class="card d-flex" style="width: 22.5rem;align-items: center; justify-content: center;padding-top: 28px;padding-bottom: 28px;">
+      <img src= "../../../assets/imgdoc.png" class="card-img-top" class="mediana" alt="Documento cuenta de cobro" >
+      <div class="card-body">
+        <h5 class="card-title"> Estuidiante : {{cuenta.nombreEstudiante}}</h5>
+          <h6>Valor: {{cuenta.valor}}</h6>
+         <a   style="cursor: pointer;" class="figure-caption"
+          [routerLink]="['/cuentas', { outlets: { 'detail': [cuenta.id] } }]"
+          class="btn btn-primary align-items-center d-flex justify-content-center" 
+         style="width: 10rem;margin-top:12px;">Ver Detalle</a>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="col-sm-4">
+      <router-outlet name="detail"></router-outlet>
+    </div>
+   
+        
 
-      
     
