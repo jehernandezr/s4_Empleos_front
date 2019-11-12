@@ -9,7 +9,7 @@ img.mediana{
     width: 100px; height: 100px;
   }
 
-  
+
   img.grande{
     width: 200px; height: 200px;
   }
@@ -32,4 +32,15 @@ img {
 
 #but:hover {
   color: white !important;
+}
+
+.container2{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  max-height: 100%;
+  min-height: 100%;
+
+  font-family: caviardreams;
 }

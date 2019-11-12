@@ -1,10 +1,14 @@
+<div id="container2" class="container2">
+
+
 <div style="padding:20px;background-color:#353436;display:flex;flex-direction: row;justify-content: center;">
     <button class="btn btn-warning" style="border-color:#FFC14F;color:white;background-color:#FFB13F!important;">Crear Cuenta De Cobro</button>
   </div>
-  <div style = "overflow-y: auto; height:300px;">
+  
+  <div style = "overflow-y: auto; height:300px;" style="background-color:#353436;padding:45px;"   >
   <div class="container" >
-    <div class="card-deck" style="column-count: 3; padding-top:12px;">
-    <div *ngFor = "let cuenta of cuentas" class="card d-flex" style="width: 22.5rem;align-items: center; justify-content: center;padding-top: 28px;padding-bottom: 28px;">
+    <div class="card-deck" style="margin-top:-20px;padding:5px;margin-bottom:20px;">
+    <div *ngFor = "let cuenta of cuentas" class="card d-flex"style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);margin-top:25px;width: 22.5rem;align-items: center; justify-content: center;padding-top: 28px;padding-bottom: 28px; border-radius:1rem;">
       <img src= "../../../assets/imgdoc.png" class="card-img-top" class="mediana" alt="Documento cuenta de cobro" >
       <div class="card-body">
         <h5 class="card-title"> Estuidiante : {{cuenta.nombreEstudiante}}</h5>
@@ -21,3 +25,4 @@
       <router-outlet name="detail"></router-outlet>
     </div>
   </div>
+</div>
