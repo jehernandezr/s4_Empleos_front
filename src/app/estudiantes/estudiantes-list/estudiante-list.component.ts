@@ -17,9 +17,14 @@ export class EstudianteListComponent implements OnInit {
   constructor(private estudianteService: EstudianteService) { }
 
   getEstudiante(id:number): void {
-    this.estudianteService.getEstudiante(id).subscribe(estudiante => {
+    /*this.estudianteService.getEstudiante(id).subscribe(estudiante => {
       this.selectedDetail = estudiante;
-    });
+    });*/
+    for(var ind = 0; ind < this.estudiantes.length; ind++) {
+      if(this.estudiantes[ind].id == id) {
+        this.selectedDetail = this.estudiantes[ind];
+      }
+    }
   }
 
   getEstudiantes(): void {

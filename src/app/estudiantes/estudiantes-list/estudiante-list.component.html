@@ -1,17 +1,29 @@
-<div class="container">
-<div class="card-deck" style="column-count: 3;padding-top:12px;">
-<div *ngFor = "let estudiante of estudiantes" class="card d-flex" style="width: 22.5rem;align-items: center; justify-content: center;padding-top: 28px;padding-bottom: 28px;">
-  <img src="../../../assets/user.png" class="card-img-top" alt="...">
+<div style="padding:20px;background-color:#353436;display:flex;flex-direction: row;justify-content: center;">
+  <a class="btn btn-warning" style="border-color:#FFC14F;color:white;background-color:#FFB13F!important;">Crear estudiante</a>
+</div>
+
+<div style="background-color:#353436;padding:45px;padding-top:0px;display:flex;flex-direction:row;justify-content:center;width:100%;overflow-y:scroll;height:800px;overflow-x:hidden;">
+<div class="card-deck" style="margin-top:-20px;padding:5px;margin-bottom:20px;">
+<div *ngFor = "let estudiante of estudiantes; let i = index">
+
+<div class="card d-flex" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);margin-top:25px;width: 22.5rem;align-items: center; justify-content: center;padding-top: 28px;padding-bottom: 28px; border-radius:1rem;">
+  <img src="../../../assets/user.png" class="card-img-top" alt="..." style="margin-top:15px;">
   <div class="card-body">
-    <h5 class="card-title">{{estudiante.nombre}}</h5>
-      <h6>Semestre: {{estudiante.semestre}}</h6>
+    <h5 class="card-title" style="margin-top:15px;">{{estudiante.nombre}}</h5>
       <h6>Carrera: {{estudiante.carrera}}</h6>
-    <a (click)="onSelected(estudiante.id)" href="javascript:;" class="btn btn-primary align-items-center d-flex justify-content-center" style="width: 10rem;margin-top:12px;">Ver perfil</a>
+      <h6>Semestre: {{estudiante.semestre}}</h6>
+    <a id="but" style="margin-top:30px;width: 10rem;margin-bottom:10px;font-style: bold;color:#FFD151;border-color: #FFD151;" (click)="onSelected(estudiante.id)" href="javascript:;" class="btn btn-outline-warning align-items-center d-flex justify-content-center">Ver perfil</a>
   </div>
 </div>
 </div>
 </div>
 
-<div *ngIf="selectedDetail != undefined">
-  <app-estudiante-detail [estudianteDetail]="selectedDetail"></app-estudiante-detail>
+
+<div *ngIf="selectedDetail != undefined" style="display:flex;flex-direction:row;justify-content:center;width:28%;margin-left:40px;margin-right:40px;">
+    <div style="width:100%;">
+      <app-estudiante-detail [estudianteDetail]="selectedDetail"></app-estudiante-detail>
+    </div>
+  </div>
+
+
 </div>

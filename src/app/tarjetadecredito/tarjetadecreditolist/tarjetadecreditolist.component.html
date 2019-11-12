@@ -12,8 +12,7 @@
         <tr *ngFor="let e of tarjetas">
           <td>{{e.numero}}</td>
           <td>{{e.cvc}}</td>
-          <td style="cursor: pointer;"><a class="figure-caption"
-              [routerLink]="['/tarjetas', { outlets: { 'detail': [e.id] } }]">Ver Detalles</a></td>
+          <td style="cursor: pointer;"><a class="figure-caption" routerLink="/tarjetas/{{e.id}}">Ver Detalles</a></td>
         </tr>
       </tbody>
     </table>
@@ -25,11 +24,6 @@
       </button>
     </div>
     
-  <div class="col-sm-3">
-    <router-outlet name="detail"></router-outlet>
-  </div>
-
-
   <!-- Modal -->
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
     aria-hidden="true">
@@ -43,10 +37,6 @@
         </div>
         <div class="modal-body">
           <app-tarjeta-create></app-tarjeta-create>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button class="btn btn-primary" type="submit">Agregar</button>
         </div>
       </div>
     </div>

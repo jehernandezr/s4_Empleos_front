@@ -19,6 +19,7 @@
                     <div class="input-group-prepend">
                       <label class="input-group-text" for="inputGroupSelect01">Options</label>
                     </div>
+                    
                     <select class="custom-select" formControlName="TipodeTarjeta" id="TipodeTarjeta">
                       <option selected>Choose...</option>
                       <option value="MasterCard">MASTERCARD</option>
@@ -49,6 +50,11 @@
                        placeholder="La fecha de la tarjeta de credito. Formato = MM/AA">
                     </div>
 
-                    <button class="button mx-sm-3 mb-2" type="submit">Create</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button  class="btn btn-primary" type="submit">Crear Factura</button>
+    
+                      </div>
+    
     
     </form>
