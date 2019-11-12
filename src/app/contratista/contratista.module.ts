@@ -6,11 +6,12 @@ import { ContratistaService } from './contratista.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContratistaCreateComponent } from './contratista-create/contratista-create.component';
 @NgModule({
   imports: [
     CommonModule, HttpClientModule, AppRoutingModule, FormsModule,ReactiveFormsModule
   ],
-  declarations: [ContratistaListComponent, ContratistaDetailComponent ],
+  declarations: [ContratistaListComponent, ContratistaDetailComponent, ContratistaCreateComponent ],
   exports: [ContratistaListComponent,ContratistaDetailComponent],
   providers: [ContratistaService]
 })

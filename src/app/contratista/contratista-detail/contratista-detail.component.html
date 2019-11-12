@@ -1,3 +1,72 @@
-<p>
-  contratista-detail works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+              <div class="card-title">
+                
+                <div class="col-12"><img class="rounded mx-auto d-block" src="{{contratistaDetail.rutaImagen}}"></div>
+                
+              </div>
+              <h3 >{{contratistaDetail.nombre}}</h3>
+
+              <div class="card-text">
+                  {{contratistaDetail.email}}<br>
+                  
+
+
+              </div>
+            </div>
+          </div>
+
+<h3>Ofertas</h3>
+          <div class="card" *ngFor="let e of contratistaDetail.ofertas">
+              
+                  <div class="card " *ngIf="e.tipoOferta===1">
+
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col-9">
+                                  <h4 class="card-text"><a class="nav-link " routerLink="/ofertas/{{e.id}}"
+                                          routerLinkActive="active">{{e.nombre}}</a></h4>
+                              </div>
+                              <div class="col-3 ">
+                                  <img class="imagen-peque" src="{{e.rutaImagen}}">
+
+                              </div>
+                          </div>
+                          <p class="card-text">{{e.descripcion.substr(0,244)}}<a routerLink="/ofertas/{{e.id}}"
+                                  routerLinkActive="active">... Ver mas </a></p>
+
+                      </div>
+
+
+
+                  </div>
+                  <div class="card  border-danger" *ngIf="e.tipoOferta===2">
+                      <div class="card-header bg-danger blanco">Oferta Express</div>
+                      <div class="card-body">
+                              <div class="row">
+                                  <div class="col-9">
+                                      <h4 class="card-text"><a class="nav-link " routerLink="/ofertas/{{e.id}}"
+                                              routerLinkActive="active">{{e.nombre}}</a></h4>
+                                  </div>
+                                  <div class="col-3 ">
+                                      <img class="imagen-peque" src="{{e.rutaImagen}}">
+  
+                                  </div>
+                              </div>
+                              <p class="card-text">{{e.descripcion.substr(0,244)}}<a routerLink="/ofertas/{{e.id}}"
+                                      routerLinkActive="active">... Ver mas </a></p>
+  
+                          </div>
+
+
+
+                  </div>
+              
+          </div>
+
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 <div class="container">
 	<br>
-	<div *ngIf="ofertaDetail.tipoOferta===1">
+	<div>
 		<div class="row">
 			<div class="col-12">
 				<div class=" card dos">
@@ -69,6 +69,20 @@
 						<p class="card-text">{{ofertaDetail.horasDeTrabajo}}</p>
 						<h5 class="card-text">Pago por hora</h5>
 						<p class="card-text">{{ofertaDetail.pagoPorHora | currency}}</p>
+						<div *ngIf="ofertaDetail.tipoOferta===2">
+								<h5 class="card-text">Porcentaje de pago adicional</h5>
+								<p class="card-text">{{ofertaDetail.porcentajePagoAdicional}}%</p>
+
+								<h5 class="card-text">Tiempo maximo de aplicacion</h5>
+								<p class="card-text">{{ofertaDetail.tiempoMaximoAplicacion}} Dias</p>
+
+								
+
+
+						</div>
+						
+
+
 						<button type="button" class="btn btn-block btn-dark">Aplicar</button>
 
 
