@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { CuentaDeCobro } from '../cuenta-de-cobro';
 import { CuentaDeCobroService } from '../cuenta-de-cobro.service';
+import { CuentaDeCobroDetail } from '../cuenta-de-cobro-detail';
 
 
 @Component({
@@ -14,14 +15,14 @@ import { CuentaDeCobroService } from '../cuenta-de-cobro.service';
 export class CuentaDeCobroCreateComponent implements OnInit {
     
     
-    
+  cuenta:CuentaDeCobroDetail;
     constructor( private cuentasDeCobroService:CuentaDeCobroService, 
       private toastr: ToastrService, 
-      private formBuilder: FormBuilder,) 
+      private formBuilder: FormBuilder) 
   {
     this.clientForm = this.formBuilder.group({
-      nombreEstudiante: [],
-      fecha:[],
+      nombreEstudiante:[],
+      fecha:[""],
       valor:[],
     });
 
@@ -39,13 +40,15 @@ export class CuentaDeCobroCreateComponent implements OnInit {
   
     createCuentaDeCobro(newClient: CuentaDeCobro) {
       // Process checkout data here
-      console.warn("la cuenta de cobro fue agregada", newClient);
-  
+
+      var fecha = (<HTMLInputElement>document.getElementById("fecha")).value + "T00:00:00-00:00";
+      newClient.fecha=fecha
       this.cuentasDeCobroService.createCuentaDeCobro(newClient).subscribe(client => {
         this.cuentas.push(client);
         this.showSuccess();
       });
       this.clientForm.reset();
+      console.warn("la cuenta de cobro fue agregada", newClient);
     }
   
     showSuccess() {

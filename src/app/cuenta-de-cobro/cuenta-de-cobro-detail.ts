@@ -8,7 +8,7 @@ import { Contratista } from '../contratista/contratista';
 */
 export class CuentaDeCobroDetail extends CuentaDeCobro {
    
-    fecha: string;
+    
     contratisa: Contratista;
     concepto:String;
     numeroCuentaDeCobro:number;
