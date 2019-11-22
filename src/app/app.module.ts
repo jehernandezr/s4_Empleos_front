@@ -32,7 +32,8 @@ import { OfertaModule } from "./oferta/oferta.module";
 
 import { ContratistaModule } from './contratista/contratista.module';
 import{CuentaDeCobroModule} from './cuenta-de-cobro/cuenta-de-cobro.module';
-import { HomeModule} from "./home/home.module";
+import { HomeModule } from "./home/home.module";
+import { SignInModule } from "./sign-in/sign-in.module";
 
 @NgModule({
 
@@ -52,6 +53,7 @@ import { HomeModule} from "./home/home.module";
         AppRoutingModule,
         OfertaModule,
         HomeModule,
+        SignInModule,
         ContratistaModule,
         HttpClientModule,
         BrowserAnimationsModule,

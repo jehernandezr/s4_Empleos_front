@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {RouterModule, Routes} from '@angular/router';
-import {NgxPermissionsGuard} from 'ngx-permissions';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { NgxPermissionsGuard } from 'ngx-permissions';
 
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
@@ -18,16 +18,21 @@ import { ContratistaDetailComponent } from '../contratista/contratista-detail/co
 
 import { TarjetadecreditolistComponent } from '../tarjetadecredito/tarjetadecreditolist/tarjetadecreditolist.component';
 import { TarjetadecreditoDetailComponent } from '../tarjetadecredito/tarjetadecreditodetail/tarjetadecreditodetail.component';
-import{CuentaDeCobroListComponent} from '../cuenta-de-cobro/cuenta-de-cobro-list/cuenta-de-cobro-list.component';
-import{ CuentaDeCobroDetailComponent}from '../cuenta-de-cobro/cuenta-de-cobro-detail/cuenta-de-cobro-detail.component';
+import{ CuentaDeCobroListComponent } from '../cuenta-de-cobro/cuenta-de-cobro-list/cuenta-de-cobro-list.component';
+import{ CuentaDeCobroDetailComponent }from '../cuenta-de-cobro/cuenta-de-cobro-detail/cuenta-de-cobro-detail.component';
 
-import{FacturaListComponent} from '../factura/factura-list/factura-list.component';
+import{ FacturaListComponent } from '../factura/factura-list/factura-list.component';
 import{ FacturaDetailComponent}from '../factura/factura-detail/factura-detail.component';
 
-import{HomeComponent} from '../home/home-component/home-component.component';
+import{ HomeComponent } from '../home/home-component/home-component.component';
+import { SignInComponent } from '../sign-in/sign-in-component/sign-in-component.component';
 
 
 const routes: Routes = [
+    {
+      path: "signin",
+      component: SignInComponent
+    },
       {
         path: "tarjetas",
         children: [
