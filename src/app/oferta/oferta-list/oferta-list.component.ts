@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { OfertaDetail } from '../oferta-detail/oferta-detail';
 import { map, filter } from 'rxjs/operators';
 
+import { TokenService } from "../../tokenService";
+
 
 
 @Component({
@@ -14,14 +16,16 @@ import { map, filter } from 'rxjs/operators';
 })
 export class OfertaListComponent implements OnInit {
 
-  constructor(private ofertaService: OfertaService, private router:Router) { }
+  token: string;
+
+  constructor(private ofertaService: OfertaService, private router:Router, private tokenService: TokenService) { }
 
   
   selectedOferta: OfertaDetail;
   ngOnInit() {
     this.getOfertas();
-    
-    
+    this.token = this.tokenService.currentToken;
+    console.log("token: " + this.token);
   }
   onSelect(event){
     if(event.value=="1"){

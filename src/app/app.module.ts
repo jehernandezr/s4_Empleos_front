@@ -12,6 +12,8 @@ import {NgxPermissionsModule} from 'ngx-permissions';
 import { ModalDialogModule } from 'ngx-modal-dialog';
 import {CommonModule} from '@angular/common';
 
+import { TokenService } from "./tokenService";
+
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
@@ -34,6 +36,7 @@ import { ContratistaModule } from './contratista/contratista.module';
 import{CuentaDeCobroModule} from './cuenta-de-cobro/cuenta-de-cobro.module';
 import { HomeModule } from "./home/home.module";
 import { SignInModule } from "./sign-in/sign-in.module";
+import { Token } from '@angular/compiler';
 
 @NgModule({
 
@@ -77,7 +80,7 @@ import { SignInModule } from "./sign-in/sign-in.module";
             provide: HTTP_INTERCEPTORS,
             useClass: HttpErrorInterceptor,
             multi: true
-        }, EstudianteService,
+        }, EstudianteService, TokenService
     ]
 
 })

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SignInService } from "../sing-in.service";
+import { TokenService } from "../../tokenService"
 
 @Component({
     selector: 'sign-in-component',
@@ -8,7 +9,7 @@ import { SignInService } from "../sing-in.service";
   })
   export class SignInComponent implements OnInit {
   
-    constructor(private signInService: SignInService) { }
+    constructor(private signInService: SignInService, private tokenService: TokenService) { }
   
     ngOnInit() {
     }
@@ -22,6 +23,7 @@ import { SignInService } from "../sing-in.service";
           if(user != null) {
             var token = user.token;
             console.log(token);
+            this.tokenService.changeToken(token);
             if(token != "") {
               alert("Login exitoso");          
             }
