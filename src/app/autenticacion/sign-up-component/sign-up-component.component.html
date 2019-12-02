@@ -1,0 +1,6 @@
+<div>
+    <span style="cursor:pointer;color:black;" (click)="selectTipo('Estudiante')">Estudiante</span>
+    <span style="cursor:pointer;color:black;margin-left:50px;" (click)="selectTipo('Contratista')">Contratista</span>
+</div>
+<app-estudiante-create *ngIf="selected == 'Estudiante'"></app-estudiante-create>
+<app-contratista-create *ngIf="selected == 'Contratista'"></app-contratista-create>

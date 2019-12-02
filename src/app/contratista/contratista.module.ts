@@ -12,7 +12,7 @@ import { ContratistaCreateComponent } from './contratista-create/contratista-cre
     CommonModule, HttpClientModule, AppRoutingModule, FormsModule,ReactiveFormsModule
   ],
   declarations: [ContratistaListComponent, ContratistaDetailComponent, ContratistaCreateComponent ],
-  exports: [ContratistaListComponent,ContratistaDetailComponent],
+  exports: [ContratistaListComponent,ContratistaDetailComponent, ContratistaCreateComponent],
   providers: [ContratistaService]
 })
 export class ContratistaModule { }
