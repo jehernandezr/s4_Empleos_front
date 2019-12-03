@@ -3,6 +3,8 @@ import { Estudiante } from "../estudiante";
 import { EstudianteService } from "../estudiante.service";
 import { Usuario } from "../../usuario";
 import { AuthService } from "../../autenticacion/auth.service";
+import { TokenService } from "../../tokenService";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-estudiante-create',
@@ -15,7 +17,7 @@ export class EstudianteCreateComponent implements OnInit {
 
   estudiante: Estudiante;
 
-  constructor(private estudianteService: EstudianteService, private autenticacion: AuthService) { }
+  constructor(private router: Router, private tokenService: TokenService, private estudianteService: EstudianteService, private autenticacion: AuthService) { }
 
   ngOnInit() {
   }
@@ -58,8 +60,16 @@ export class EstudianteCreateComponent implements OnInit {
       usuario.esExterno = false;
       usuario.id = 0;
 
-      this.autenticacion.crear(usuario, correo, pass, 'Estudiante').subscribe(token => {
-        console.log(token);
+      this.autenticacion.crear(usuario, correo, pass, 'Estudiante').subscribe(user => {
+        if(user != null) {
+          var token = user.token;
+          console.log(token);
+          this.tokenService.changeToken(token);
+          this.tokenService.changeTipo(user.tipo);
+          if(token != "") {
+            this.router.navigate(['/land', {}]);
+          }
+        }
       });
 
     } else {
