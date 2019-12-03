@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SignInService } from "../sing-in.service";
+import { AuthService } from "../auth.service";
 import { TokenService } from "../../tokenService"
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'sign-in-component',
@@ -9,9 +10,13 @@ import { TokenService } from "../../tokenService"
   })
   export class SignInComponent implements OnInit {
   
-    constructor(private signInService: SignInService, private tokenService: TokenService) { }
+    constructor(private signInService: AuthService, private tokenService: TokenService, private router: Router) { }
   
     ngOnInit() {
+      var token = this.tokenService.currentToken;
+      if(token != "" && token != undefined && token != null) {
+        this.router.navigate(['/land', {}]);
+      }
     }
 
     signin() {
@@ -24,8 +29,9 @@ import { TokenService } from "../../tokenService"
             var token = user.token;
             console.log(token);
             this.tokenService.changeToken(token);
+            this.tokenService.changeTipo(user.tipo);
             if(token != "") {
-              alert("Login exitoso");          
+              this.router.navigate(['/land', {}]);
             }
           } else {
             alert("Credenciales incorrectas");

@@ -25,13 +25,24 @@ import{ FacturaListComponent } from '../factura/factura-list/factura-list.compon
 import{ FacturaDetailComponent}from '../factura/factura-detail/factura-detail.component';
 
 import{ HomeComponent } from '../home/home-component/home-component.component';
-import { SignInComponent } from '../sign-in/sign-in-component/sign-in-component.component';
+import { SignInComponent } from '../autenticacion/sign-in-component/sign-in-component.component';
+import { SignUpComponent } from "../autenticacion/sign-up-component/sign-up-component.component";
+
+import { LandComponent } from "../land/land-component/land.component";
 
 
 const routes: Routes = [
+  {
+    path: "land",
+    component: LandComponent
+  },
     {
       path: "signin",
       component: SignInComponent
+    },
+    {
+      path: "signup",
+      component: SignUpComponent
     },
       {
         path: "tarjetas",

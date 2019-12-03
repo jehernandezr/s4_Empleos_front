@@ -10,6 +10,7 @@ import { EstudianteCreateComponent } from "./estudiante-create/estudiante-create
     CommonModule,
   ],
   declarations: [EstudianteListComponent, EstudianteDetailComponent, EstudianteCreateComponent],
+  exports: [EstudianteListComponent, EstudianteDetailComponent, EstudianteCreateComponent],
   providers: [EstudianteService]
 })
 export class EstudianteModule { }
