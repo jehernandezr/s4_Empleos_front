@@ -1,7 +1,7 @@
-import { Component, OnInit, NgModule, Pipe, PipeTransform } from '@angular/core';
+import { Component, OnInit, NgModule, Pipe, PipeTransform, Input } from '@angular/core';
 import {OfertaService} from '../oferta.service';
 import { Oferta } from '../oferta';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { OfertaDetail } from '../oferta-detail/oferta-detail';
 import { map, filter } from 'rxjs/operators';
 
@@ -18,15 +18,13 @@ export class OfertaListComponent implements OnInit {
 
   token: string;
 
-  constructor(private ofertaService: OfertaService, private router:Router, private tokenService: TokenService) { }
+  constructor(private ofertaService: OfertaService, private router:Router, private tokenService: TokenService, private route: ActivatedRoute) { }
 
-  
+  @Input() palabra: String;
   selectedOferta: OfertaDetail;
-  ngOnInit() {
-    this.getOfertas();
-    this.token = this.tokenService.currentToken;
-    console.log("token: " + this.token);
-  }
+  
+  loader:any;
+ 
   onSelect(event){
     if(event.value=="1"){
      const ke: HTMLInputElement = document.getElementById('bussiness') as HTMLInputElement;
@@ -37,12 +35,19 @@ export class OfertaListComponent implements OnInit {
  
 
   numOfertas():number{
+
     return this.ofertas.length;
   }
 
   ofertas: Oferta[];
   getOfertas(): void {
         this.ofertaService.getOfertas().subscribe(ofertas => this.ofertas = ofertas);
+    }
+
+    filtrarOnApp():void{
+      const inputElement: HTMLInputElement = document.getElementById('filtro') as HTMLInputElement;
+      const filtro:String = inputElement.value;
+      this.ofertaService.getOfertasPalabraClave(filtro).subscribe(ofertas => this.ofertas = ofertas);
     }
 
     carUnicas():string[]{
@@ -67,11 +72,49 @@ export class OfertaListComponent implements OnInit {
      return contador;
     }
     
-    getOfertasFiltradas(): void {
+    getOfertasFiltradas(pal:String): void {
 
-      const inputElement: HTMLInputElement = document.getElementById('filtro') as HTMLInputElement;
-      const filtro:String = inputElement.value;
-      this.ofertaService.getOfertasPalabraClave(filtro).subscribe(ofertas => this.ofertas = ofertas);
+     
+      this.ofertaService.getOfertasPalabraClave(pal).subscribe(ofertas => this.ofertas = ofertas);
+  }
+
+  onLoad(params) {
+
+    this.palabra = params['a'];
+    console.log(" en detail " + this.palabra);
+    
+  }
+  /**
+  * The method which initializes the component
+  * We need to initialize the editorial so it is never considered as undefined
+  */
+  ngOnInit() {
+    
+
+    
+   
+     
+      
+      this.loader = this.route.params.subscribe((params: Params) => this.onLoad(params));
+      this.route.queryParams.subscribe(params => {
+        const palabra = params['a'];
+        console.log('a',palabra);
+        if(palabra===undefined)
+        this.getOfertas();
+        else
+        this.getOfertasFiltradas(palabra);
+      });
+    
+      
+     
+     
+    this.token = this.tokenService.currentToken;
+    console.log("token: " + this.token);
+    
+
+  }
+  ngOnDestroy() {
+    this.loader.unsubscribe();
   }
   
 

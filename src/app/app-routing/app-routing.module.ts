@@ -95,10 +95,22 @@ const routes: Routes = [
     },
     {
         path: 'ofertas',
+        component:OfertaListComponent,
         children: [{
-          path: 'list',
+          path: ':a',
           component: OfertaListComponent
         },
+        {
+          path: ':id',
+          component: OfertaDetailComponent,
+         
+        }
+        ]
+      },
+      {
+        path: 'oferta',
+        
+        children: [
         {
           path: ':id',
           component: OfertaDetailComponent,

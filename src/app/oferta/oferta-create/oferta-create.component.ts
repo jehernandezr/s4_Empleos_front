@@ -3,6 +3,7 @@ import { OfertaService } from '../oferta.service';
 import { Oferta } from '../oferta';
 import { ToastrService } from 'ngx-toastr';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { TokenService } from "../../tokenService";
 
 @Component({
   selector: 'app-oferta-create',
@@ -10,9 +11,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./oferta-create.component.css']
 })
 export class OfertaCreateComponent implements OnInit {
-
-  constructor( private ofertaService:OfertaService, private toastr: ToastrService, private formBuilder: FormBuilder,) 
+  
+token:string 
+  constructor( private ofertaService:OfertaService, private toastr: ToastrService,private tokenService: TokenService, private formBuilder: FormBuilder,) 
   {
+    
     this.clientForm = this.formBuilder.group({
       nombre: ["", [Validators.required ]],
       descripcion: ["", Validators.required],
@@ -29,7 +32,8 @@ export class OfertaCreateComponent implements OnInit {
       tipoOferta:[],
       contratista:[] ,
       trabajo: [] ,
-      estudiantes: this.formBuilder.array([]) 
+      estudiantes: this.formBuilder.array([]) ,
+      token:[]
 
     });
     if(this.clientForm.get('porcentajePagoAdicional').value===null){
@@ -42,6 +46,7 @@ export class OfertaCreateComponent implements OnInit {
     this.clientForm.get('estaAbierta').setValue(true);
     this.clientForm.get('trabajo').setValue({});
     this.clientForm.get('contratista').setValue({});
+    this.clientForm.get('token').setValue(this.token );
     
   }
 
@@ -73,6 +78,7 @@ export class OfertaCreateComponent implements OnInit {
    
   }
   ngOnInit() {
+    this.token=this.tokenService.currentToken;
     this.ofertaService
       .getOfertas()
       .subscribe(clientes => (this.ofertas = clientes));

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'home-component',
@@ -7,7 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
   })
   export class HomeComponent implements OnInit {
   
-    constructor() { }
+    constructor(private router: Router, private route: ActivatedRoute) { }
+
+    buscar():void{
+      var nombre = (<HTMLInputElement> document.getElementById("search")).value;
+      
+      this.router.navigate(['/ofertas/'], {queryParams: {a: nombre},relativeTo : this.route});
+ 
+    }
+
   
     ngOnInit() {
     }

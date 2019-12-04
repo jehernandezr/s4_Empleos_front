@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OfertaCreateComponent } from './oferta-create/oferta-create.component';
 import { SplitPipe } from './split.pipe';
 import { FilterPipe } from './filter.pipe';
+import { AppComponent } from '../app.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { FilterPipe } from './filter.pipe';
   ],
   declarations: [OfertaListComponent, OfertaDetailComponent, OfertaCreateComponent, SplitPipe, FilterPipe ],
   exports: [OfertaListComponent, OfertaDetailComponent],
-  providers: [OfertaService]
+  providers: [OfertaService,AppComponent]
 
 })
 export class OfertaModule { }
