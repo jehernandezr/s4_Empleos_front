@@ -4,7 +4,7 @@
     "newProjectRoot": "projects",
     "projects": {
         "s4_empleos-Front": {
-            "root": "",
+            "root": "home",
             "sourceRoot": "src",
             "projectType": "application",
             "architect": {
