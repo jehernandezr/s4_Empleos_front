@@ -1,4 +1,8 @@
-<form [formGroup]="clientForm" style="margin-top:20px;" (ngSubmit)="!clientForm.invalid && createContratista(clientForm.value)">
+<br>
+<br>
+<br>
+<div class="cont2" >
+<form  style="margin-top:20px;">
 
     <div style="padding:60px;">
         <div style="display:flex;flex-direction: row;justify-content: center; color: white;">
@@ -11,30 +15,36 @@
                   <input novalidate
                   id="nombre"
                   class="dataField"
-                    formControlName="nombre"
-                    placeholder="Nombre">
+                    
+                    placeholder="Nombre"  style="width: 20%;">
+                    <input id="pass" class="dataField" type="password" placeholder="Contraseña"  style="width: 20%;">
+
+                    
   
                    
                         
                 
             </div>
             
-            <div style="display:flex;flex-direction: row;justify-content: center;">
+            <div style="display:flex;flex-direction: row;justify-content: center; ">
                 <input id="email" type="text"
-                         class="dataField"
-                         formControlName="email"
-                         placeholder="E-mail">
+                class="dataField"
+                
+                style="width: 40%;" 
+                placeholder="E-mail">
             </div>
-            <div style="display:flex;flex-direction: row;justify-content: center;">
-                <input id="rutaImagen" type="text"
-                class="form-control"
-                formControlName="rutaImagen"
+            <div style="display:flex;flex-direction: row;justify-content: center ;">
+                <input id="rutaImagen"  style="width: 40%;" type="text"
+                class="dataField"
+                
                 placeholder="rutaImagen de la oferta">
-                <input id="pass" class="dataField" style="width:300px;" type="password" placeholder="Contraseña">
-                <input type="checkbox" id="esExterno" formControlName="esExterno"/>
+            </div>
+            <div style="display:flex;flex-direction: row;justify-content: center;">                <p>¿Es Externo?</p>
+            </div>
+            <div style="display:flex;flex-direction: row;justify-content: center;">             <input type="checkbox" id="esExterno" style="align-items: center;" />
             </div>
             <div style="display:flex;flex-direction: row;justify-content: center;">
-                <a (click)="createEstudiante()" class="btn btn-warning" style="border-radius:30px;margin-top:20px;width:200px;cursor:pointer;border-color:#FFC14F;color:white;background-color:#FFB13F!important;">Crear</a>
+                <a (click)="createContratista()" class="btn btn-warning" style="border-radius:30px;margin-top:20px;width:200px;cursor:pointer;border-color:#FFC14F;color:white;background-color:#FFB13F!important;">Crear</a>
             </div>
         
     </div>
@@ -42,4 +52,4 @@
   </form>
   
 
- 
+</div>

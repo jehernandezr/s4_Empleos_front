@@ -6,6 +6,10 @@
     margin: 12px;
 }
 
+.cont2{
+    background-color: white;
+    border-radius: 30px;
+}
 input {
     border: none;
     text-align: center;
