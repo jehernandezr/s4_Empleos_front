@@ -41,6 +41,7 @@ export class OfertaDetailComponent implements OnInit {
         if(tipo == "Estudiante") {
           this.estudianteService.getEstudiante(this.tokenService.currentIdLog, this.tokenService.currentToken).subscribe(estudiante => {
             this.ofertaService.aplicar(estudiante, id, this.tokenService.currentIdLog, this.tokenService.currentToken).subscribe(algo => {
+              console.log("here");
               this.router.navigate(['/land', {}]);
             });
           });

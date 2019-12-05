@@ -34,7 +34,9 @@ export class OfertaService {
     }
 
     aplicar(estudiante, idOferta, idEstudiante, token) {
-      return this.http.post<Estudiante>(API_URL + ofertas + "/aplicar?idOferta=" + idOferta + "&idEstudiante=" + idEstudiante + "&token=" + token, estudiante, this.httpOptions);
+      var url = API_URL + ofertas + "aplicar?idOferta=" + idOferta + "&idEstudiante=" + idEstudiante + "&token=" + token;
+      console.log(url);
+      return this.http.post<Estudiante>(url, estudiante, this.httpOptions);
     }
 
     getOfertasPalabraClave(filtro:String): Observable<Oferta[]> {
