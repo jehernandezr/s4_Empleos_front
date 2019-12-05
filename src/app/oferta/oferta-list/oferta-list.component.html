@@ -27,7 +27,12 @@
             <div class="card col-12" style="background-color:  #353436;border-color:  #353436;"id="numof">
 
                 <h4 *ngIf="offers == undefined" class="card-text blanco" >Ofertas disponibles: {{numOfertas()}}</h4>
+               <div *ngIf="tipo=='Estudiante'">
                 <h4 *ngIf="offers != undefined" class="card-text blanco"  >Ofertas a las que has aplicado: {{numOfertas()}}</h4>
+            </div>
+            <div *ngIf="tipo=='Contratista'">
+                    <h4 *ngIf="offers != undefined" class="card-text blanco"  >Ofertas publicadas: {{numOfertas()}}</h4>
+                </div>
             </div>
         </div>
 
@@ -82,7 +87,7 @@
                         <div class="crearOf" *ngIf="tipo == 'Contratista'">
                                 <button type="button" style="white-space: nowrap" class="btn  btn-md btn-block" style="background-color: #353436 ;"
                                 id="btn-crear" data-toggle="modal" data-target="#exampleModalLong">
-                                Crear Oferta
+                                <p class="blanco">Crear Oferta</p>
                             </button>
                         </div>
                         
