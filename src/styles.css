@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
-body,
+
 .row,
 #content{
+    height: 100%;
+    
+}
+body{
+    background-color: #353436;
     height: 100%;
 }
 

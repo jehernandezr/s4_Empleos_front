@@ -17,6 +17,7 @@ import { TokenService } from "../../tokenService";
 export class OfertaListComponent implements OnInit {
 
   token: string;
+  tipo:string;
 
   constructor(private ofertaService: OfertaService, private router:Router, private tokenService: TokenService, private route: ActivatedRoute) { }
 
@@ -44,11 +45,18 @@ export class OfertaListComponent implements OnInit {
         this.ofertaService.getOfertas().subscribe(ofertas => this.ofertas = ofertas);
     }
 
-    filtrarOnApp():void{
+    filtrarOnApp1():void{
       const inputElement: HTMLInputElement = document.getElementById('filtro') as HTMLInputElement;
       const filtro:String = inputElement.value;
       this.ofertaService.getOfertasPalabraClave(filtro).subscribe(ofertas => this.ofertas = ofertas);
     }
+
+    filtrarOnApp2():void{
+      const inputElement: HTMLInputElement = document.getElementById('filtro') as HTMLInputElement;
+      const filtro:String = inputElement.value;
+      this.ofertaService.getOfertasPalabraClave(filtro).subscribe(ofertas => this.ofertas = ofertas);
+    }
+
 
     carUnicas():string[]{
       var array:string[]= new Array();
@@ -109,6 +117,7 @@ export class OfertaListComponent implements OnInit {
      
      
     this.token = this.tokenService.currentToken;
+    this.tipo = this.tokenService.currentTipo;
     console.log("token: " + this.token);
     
 

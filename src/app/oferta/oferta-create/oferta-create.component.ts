@@ -46,12 +46,15 @@ token:string
     this.clientForm.get('estaAbierta').setValue(true);
     this.clientForm.get('trabajo').setValue({});
     this.clientForm.get('contratista').setValue({});
+    this.token=this.tokenService.currentToken;
     this.clientForm.get('token').setValue(this.token );
     
   }
 
 
   clientForm: FormGroup;
+  tipo:string;
+ 
 
   ofertas:Oferta[];
 
@@ -78,10 +81,11 @@ token:string
    
   }
   ngOnInit() {
-    this.token=this.tokenService.currentToken;
+    
     this.ofertaService
       .getOfertas()
       .subscribe(clientes => (this.ofertas = clientes));
+      this.tipo = this.tokenService.currentTipo;
   }
 
 }

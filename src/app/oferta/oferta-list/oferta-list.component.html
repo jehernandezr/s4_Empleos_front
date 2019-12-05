@@ -60,7 +60,7 @@
                         <ul class="list-group list-group-flush">
                             <div *ngFor="let i of carUnicas() ">
 
-                                    <li class="list-group-item"  >{{i}}({{contarCat(i)}})</li>
+                                    <li class="list-group-item"  ><a routerLink="{{i}}">{{i}}({{contarCat(i)}})</a></li>
 
                             </div>
                         </ul>
@@ -77,12 +77,15 @@
                     <div class="col-1"><a class="nav-link active blanco" href="#">Fecha</a></div>
                     <div class="col-1"><a class="nav-link blanco" href="#">Pago</a></div>
                     <div class="col-1"><a class="nav-link blanco" href="#">Horas</a></div>
-                    <div class="col-3"></div>
+                    <div class="col-3">{{tipo}}</div>
                     <div class="col-4">
-                        <button type="button" style="white-space: nowrap" class="btn btn-primary btn-md btn-block"
-                            id="btn-crear" data-toggle="modal" data-target="#exampleModalLong">
-                            Crear Oferta
-                        </button>
+                        <div class="crearOf" *ngIf="tipo == 'Contratista'">
+                                <button type="button" style="white-space: nowrap" class="btn btn-primary btn-md btn-block"
+                                id="btn-crear" data-toggle="modal" data-target="#exampleModalLong">
+                                Crear Oferta
+                            </button>
+                        </div>
+                        
                     </div>
 
 

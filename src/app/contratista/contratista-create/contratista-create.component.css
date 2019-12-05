@@ -1,0 +1,12 @@
+.dataField {
+    border-radius: 30px;
+    background-color: #eeeeee;
+    padding: 12px;
+    color:black;
+    margin: 12px;
+}
+
+input {
+    border: none;
+    text-align: center;
+}

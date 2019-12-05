@@ -19,13 +19,13 @@
     </div>
   </div>
 
-<div id="container2" class="container2">
+<div >
 
     <div class="container overflow-auto">
                 <div class="row">
-                    <div class="card col-12" id="numof">
+                    <div class="card col-12" style="background-color:  #353436;border-color:  #353436;" >
     
-                        <h4 class="card-text">{{numContratistas()}} Contratistas registrados</h4>
+                        <h4 class="card-text" style="color: white;">{{numContratistas()}} Contratistas registrados</h4>
     
                     </div>
                 </div>
@@ -33,8 +33,8 @@
     
         <div class="row">
             <div class="col-3">
-                <div class="card" style="width: 95%;">
-                    <div class="card-header bg-dark">
+                <div class="card" style="width: 95%;border-color:  #353436;">
+                    <div class="card-header " style="background-color: #FFC14F;">
                         <p style="color:white; font-size:20px;">Filtros</p>
                     </div>
                         <div class="card-body">
@@ -42,7 +42,7 @@
     
                                 <input type="text" id="filtro" class="form-control" placeholder="Sector" aria-label="Username"
                                 aria-describedby="basic-addon1"><br><br>
-                                <button type="button" class="btn btn-block btn-dark"
+                                <button type="button" class="btn btn-block blanco" style="background-color:  #353436;"
                                 (click)="getOfertasFiltradas()">Buscar</button>
     
                             </div>
@@ -54,7 +54,7 @@
             </div>
     
             <div class="col-9 ">
-                <nav class="nav bg-dark orden">
+                <nav class="nav  orden" style="background-color: #FFC14F;">
                     
                         <div class="col-2">
                                 <p class="nav-link blanco" style="white-space: nowrap">Ordenar por: </p>
@@ -66,10 +66,7 @@
                         <div class="col-4">
                             
                               <!-- Button trigger modal -->
-<button type="button"  style="white-space: nowrap" id="btn-crear" class="btn btn-primary btn-md btn-block" data-toggle="modal" data-target="#exampleModalLong">
-   Crear Contratista
-  </button>
-  
+
   
                                 <!---button type="button" style="white-space: nowrap" class="btn btn-primary btn-md btn-block" id="btn-crear" data-toggle="modal"
                                 data-target="#exampleModalLong">
