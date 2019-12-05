@@ -28,6 +28,10 @@ export class OfertaService {
         return this.http.get<Oferta[]>(API_URL + ofertas);
     }
 
+    deleteOferta(id) : Observable<Oferta[]> {
+      return this.http.delete<Oferta[]>(API_URL + ofertas+id);
+  }
+
     getOfertaDetail(ofertaId): Observable<OfertaDetail> {
       console.log(ofertaId+" "+API_URL +ofertas+ ofertaId);
         return this.http.get<OfertaDetail>(API_URL + ofertas + ofertaId);
