@@ -26,14 +26,14 @@
         <div class="row">
             <div class="card col-12" id="numof">
 
-                <h4 class="card-text" >{{numOfertas()}} Ofertas disponibles</h4>
-
+                <h4 *ngIf="offers == undefined" class="card-text" >Ofertas disponibles: {{numOfertas()}}</h4>
+                <h4 *ngIf="offers != undefined" class="card-text" >Ofertas a las que has aplicado: {{numOfertas()}}</h4>
             </div>
         </div>
 
 
         <div class="row">
-            <div class="col-3">
+            <div *ngIf="offers == undefined" class="col-3">
                 <div class="card" style="width: 95%;">
                     <div class="card-header bg-dark">
                         <p style="color:white; font-size:20px;">Filtros</p>
@@ -69,7 +69,7 @@
             </div>
 
             <div class="col-9 ">
-                <nav class="nav bg-dark orden">
+                <nav *ngIf="offers == undefined" class="nav bg-dark orden">
 
                     <div class="col-2">
                         <p class="nav-link blanco" style="white-space: nowrap">Ordenar por: </p>
