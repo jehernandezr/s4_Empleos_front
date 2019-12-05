@@ -24,19 +24,19 @@
 
     <div class="container overflow-auto">
         <div class="row">
-            <div class="card col-12" id="numof">
+            <div class="card col-12" style="background-color:  #353436;border-color:  #353436;"id="numof">
 
-                <h4 *ngIf="offers == undefined" class="card-text" >Ofertas disponibles: {{numOfertas()}}</h4>
-                <h4 *ngIf="offers != undefined" class="card-text" >Ofertas a las que has aplicado: {{numOfertas()}}</h4>
+                <h4 *ngIf="offers == undefined" class="card-text blanco" >Ofertas disponibles: {{numOfertas()}}</h4>
+                <h4 *ngIf="offers != undefined" class="card-text blanco"  >Ofertas a las que has aplicado: {{numOfertas()}}</h4>
             </div>
         </div>
 
 
         <div class="row">
             <div *ngIf="offers == undefined" class="col-3">
-                <div class="card" style="width: 95%;">
-                    <div class="card-header bg-dark">
-                        <p style="color:white; font-size:20px;">Filtros</p>
+                <div class="card" style="width: 95%;border-color: #353436;">
+                    <div class="card-header " style="background-color: #FFC14F;">
+                        <p style="color:white; font-size:20px;background-color: #FFC14F;">Filtros</p>
                     </div>
                     <div class="card-body">
                         <div class="input-group mb-3">
@@ -44,17 +44,17 @@
                             <input type="text" id="filtro" class="form-control" placeholder="Buscar"
                                 aria-label="Username" aria-describedby="basic-addon1"><br><br>
                             <button type="button" class="btn btn-block btn-dark"
-                                (click)="filtrarOnApp()">Buscar</button>
+                                (click)="filtrarOnApp1()">Buscar</button>
 
                         </div>
                     </div>
 
                 </div>
 
-                <div class="card" style="width: 95%;">
+                <div class="card" style="width: 95%;border-color:  #353436;">
 
-                    <div class="card-header bg-dark">
-                        <p style="color:white; font-size:20px;">Filtros</p>
+                    <div class="card-header "style="background-color: #FFC14F;">
+                        <p style="color:white; font-size:20px;">Categorias</p>
                     </div>
                     <div class="card-body" id="scroll">
                         <ul class="list-group list-group-flush">
@@ -69,7 +69,7 @@
             </div>
 
             <div class="col-9 ">
-                <nav *ngIf="offers == undefined" class="nav bg-dark orden">
+                <nav *ngIf="offers == undefined" class="nav  orden" style="background-color: #FFC14F;">
 
                     <div class="col-2">
                         <p class="nav-link blanco" style="white-space: nowrap">Ordenar por: </p>
