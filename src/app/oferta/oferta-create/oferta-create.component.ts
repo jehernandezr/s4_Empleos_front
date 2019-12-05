@@ -54,6 +54,7 @@ token:string
 
   clientForm: FormGroup;
   tipo:string;
+  idL:number;
  
 
   ofertas:Oferta[];
@@ -64,7 +65,7 @@ token:string
     
     
 
-    this.ofertaService.createOferta(newClient).subscribe(client => {
+    this.ofertaService.createOferta(newClient, this.idL).subscribe(client => {
       this.ofertas.push(client);
       this.showSuccess();
     });
@@ -86,6 +87,7 @@ token:string
       .getOfertas()
       .subscribe(clientes => (this.ofertas = clientes));
       this.tipo = this.tokenService.currentTipo;
+      this.idL = this.tokenService.currentIdLog;
   }
 
 }

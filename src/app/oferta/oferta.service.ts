@@ -7,7 +7,7 @@ import { OfertaDetail } from './oferta-detail/oferta-detail';
 import { tap } from 'rxjs/operators';
 
 const API_URL = "http://localhost:8080/s4_empleos-api/api/";
-const ofertas = 'ofertas/';
+const ofertas = 'ofertas?idCon=';
 
 @Injectable()
 export class OfertaService {
@@ -41,8 +41,8 @@ export class OfertaService {
     * @param author The new author
     * @returns The confirmation that the author was created
     */
-   createOferta(oferta): Observable<Oferta> {
-    return this.http.post<Oferta>(API_URL + ofertas, oferta, this.httpOptions).pipe(tap((oferta: Oferta) => console.log(`added oferta w/ ${oferta.nombre} id=${oferta.id}`)));
+   createOferta(oferta, id:number): Observable<Oferta> {
+    return this.http.post<Oferta>(API_URL + ofertas+ id, oferta, this.httpOptions).pipe(tap((oferta: Oferta) => console.log(`added oferta w/ ${oferta.nombre} id=${oferta.id}`)));
 }
 
 
