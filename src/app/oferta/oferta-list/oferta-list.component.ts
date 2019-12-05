@@ -34,6 +34,10 @@ export class OfertaListComponent implements OnInit {
     }
 
   }
+
+  goTo(id) {
+    this.router.navigate(['/oferta/' + id, {}]);
+  }
  
 
   numOfertas():number{

@@ -105,8 +105,8 @@
 
                                 </div>
                             </div>
-                            <p class="card-text">{{e.descripcion.substr(0,244)}}<a routerLink="/ofertas/{{e.id}}"
-                                    routerLinkActive="active">... Ver mas </a></p>
+                            <p class="card-text">{{e.descripcion.substr(0,244)}}<a style="color:blue;cursor:pointer;" (click)="goTo(e.id)"
+                                    >... Ver mas </a></p>
 
                         </div>
 

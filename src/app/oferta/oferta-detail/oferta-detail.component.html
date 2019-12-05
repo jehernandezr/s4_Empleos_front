@@ -11,7 +11,7 @@
 								<h3 class="card-title">{{ofertaDetail.nombre}}</h3>
 							</div>
 							<div class="col-2">
-								<button type="button" id="btn-aplicar" class="btn btn-block btn-dark">Aplicar</button>
+								<button (click)="aplicar(ofertaDetail.id)" type="button" id="btn-aplicar" class="btn btn-block btn-dark">Aplicar</button>
 							</div>
 							<div class="col-1">
 							</div>
@@ -83,7 +83,7 @@
 						
 
 
-						<button type="button" class="btn btn-block btn-dark">Aplicar</button>
+						<button (click)="aplicar(ofertaDetail.id)" type="button" class="btn btn-block btn-dark">Aplicar</button>
 
 
 
