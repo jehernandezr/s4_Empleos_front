@@ -21,12 +21,11 @@ export class EstudianteService {
   constructor(private http: HttpClient) { }
 
   getEstudiantes(): Observable<Estudiante[]> {
-    //return this.http.get<Estudiante[]>(API_URL + estudiantes);
     return this.http.get<Estudiante[]>(API);
   }
 
-  getEstudiante(id: number): Observable<EstudianteDetail> {
-    return this.http.get<EstudianteDetail>(API_URL + estudiante + id + ".json");
+  getEstudiante(id: number, token: string): Observable<EstudianteDetail> {
+    return this.http.get<EstudianteDetail>(API + id + "?token=" + token);
   }
 
   createEstudiante(estudiante: Estudiante): Observable<Estudiante> {

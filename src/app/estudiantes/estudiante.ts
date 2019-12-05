@@ -1,3 +1,5 @@
+import { Oferta } from "../oferta/oferta";
+
 export class Estudiante {
   id: number;
   carrera: string;
@@ -7,4 +9,5 @@ export class Estudiante {
   nombre: string;
   semestre: number;
   idMedioDepago: number;
+  ofertas: Oferta[];
 }

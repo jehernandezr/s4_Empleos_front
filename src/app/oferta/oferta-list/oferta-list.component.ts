@@ -22,6 +22,7 @@ export class OfertaListComponent implements OnInit {
   constructor(private ofertaService: OfertaService, private router:Router, private tokenService: TokenService, private route: ActivatedRoute) { }
 
   @Input() palabra: String;
+  @Input() offers: Oferta[];
   selectedOferta: OfertaDetail;
   
   loader:any;
@@ -105,12 +106,16 @@ export class OfertaListComponent implements OnInit {
       
       this.loader = this.route.params.subscribe((params: Params) => this.onLoad(params));
       this.route.queryParams.subscribe(params => {
+        if(this.offers == undefined) {
         const palabra = params['a'];
         console.log('a',palabra);
         if(palabra===undefined)
         this.getOfertas();
         else
         this.getOfertasFiltradas(palabra);
+      } else {
+        this.ofertas = this.offers;
+      }
       });
     
       
