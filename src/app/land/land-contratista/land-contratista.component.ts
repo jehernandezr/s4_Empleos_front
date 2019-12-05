@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Oferta } from '../../oferta/oferta';
 import { TokenService } from '../../tokenService';
 import { ContratistaService } from '../../contratista/contratista.service';
-import { Contratista } from 'src/app/contratista/contratista';
+import { Contratista } from '../../contratista/contratista';
 
 @Component({
     selector: 'land-contratista',
