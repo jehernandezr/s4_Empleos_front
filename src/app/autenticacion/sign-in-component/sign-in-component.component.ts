@@ -30,6 +30,7 @@ import { Router } from '@angular/router';
             console.log(token);
             this.tokenService.changeToken(token);
             this.tokenService.changeTipo(user.tipo);
+            this.tokenService.changeIdLog(user.idLog);
             if(token != "") {
               this.router.navigate(['/land', {}]);
             }
